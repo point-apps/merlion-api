@@ -18,3 +18,11 @@ This is a boilerplate application for building REST APIs in Node.js using Typesc
 - [Supertest](https://www.npmjs.com/package/supertest) for e2e testing
 - [ESLint](https://eslint.org/) Code Linting
 - [Prettier](https://prettier.io/) Code Formatting
+
+## Quickstart
+
+```bash
+npm install
+npm rebuild argon2 --build-from-source
+npm run build
+```
