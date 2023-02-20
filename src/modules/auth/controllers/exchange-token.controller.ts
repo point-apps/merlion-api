@@ -1,12 +1,8 @@
-import process from "process";
 import { NextFunction, Request, Response } from "express";
-import { google } from "googleapis";
 import { ReadManyUserService } from "../services/read-many.service.js";
 import { issuer, secretKey } from "@src/config/auth.js";
 import { QueryInterface } from "@src/database/connection.js";
 import { db } from "@src/database/database.js";
-import { UpdateGoogleInfoService } from "@src/modules/auth/services/update-google-info.service.js";
-import { hashObject } from "@src/utils/hash.js";
 import { generateRefreshToken, signNewToken } from "@src/utils/jwt.js";
 
 export const exchangeToken = async (req: Request, res: Response, next: NextFunction) => {

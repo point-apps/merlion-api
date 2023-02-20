@@ -1,10 +1,14 @@
 import { NextFunction, Request, Response } from "express";
-import { getAuthUrl } from "@src/utils/google-auth.js";
+import { GoogleAuth } from "@src/utils/google-auth.js";
 
 export const googleGetAuthUrl = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    const googleAuth = new GoogleAuth();
     const callbackUrl = req.query.callback as string;
-    const url = await getAuthUrl(callbackUrl);
+    const url = googleAuth.getUrl(
+      ["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email"],
+      callbackUrl
+    );
 
     return res.status(200).json(url);
   } catch (error) {

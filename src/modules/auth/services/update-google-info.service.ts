@@ -22,6 +22,7 @@ export class UpdateGoogleInfoService {
           family_name: doc.family_name,
           picture: doc.picture,
           locale: doc.locale,
+          tokens: doc.tokens,
         },
       },
     });

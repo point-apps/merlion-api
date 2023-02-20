@@ -60,7 +60,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
     const options: MongoClientOptions = {};
 
     this.config = config;
-    console.log(this.url());
     this.client = new MongoClient(this.url(), options);
   }
 
@@ -179,8 +178,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
       // inject date of created
       // doc.createdAt = new Date();
 
-      // console.log(doc);
-
       const response = await this._collection.insertMany(docs, insertOneOptions);
 
       return {
@@ -202,7 +199,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
     }
 
     const readOptions = options as FindOptions;
-    console.log("id", id);
     const result = await this._collection.findOne(
       {
         _id: new ObjectId(id),
@@ -225,7 +221,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
     }
 
     const readOptions = options as FindOptions;
-    console.log(query.filter);
     const cursor = this._collection
       .find(query.filter ?? {}, readOptions)
       .limit(limit(query.pageSize))
@@ -359,16 +354,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
     const resultPagination = await cursorPagination.toArray();
 
     const totalDocument = resultPagination.length ? resultPagination[0].totalDocument : 0;
-    console.log(4, this._collection.collectionName, pipeline, {
-      data: result as Array<ReadResultInterface>,
-      pagination: {
-        page: page(query.page),
-        pageCount: Math.ceil(totalDocument / limit(query.pageSize)),
-        pageSize: limit(query.pageSize),
-        totalDocument,
-      },
-    });
-
     return {
       data: result as Array<ReadResultInterface>,
       pagination: {
