@@ -7,7 +7,8 @@ const upload = multer();
 
 router.get("/", controller.readMany);
 router.get("/:id", controller.read);
-router.post("/", upload.any(), controller.create);
+router.post("/", controller.create);
+router.post("/upload", upload.any(), controller.upload);
 router.patch("/:id", controller.update);
 router.delete("/:id", controller.destroy);
 

@@ -12,9 +12,19 @@ export class GoogleAuth {
     );
   }
 
+  public getOAuth2Client() {
+    return this.oAuth2Client;
+  }
+
+  public async refreshToken() {
+    const tokens = await this.oAuth2Client.refreshAccessToken();
+    console.log(tokens);
+  }
+
   public getUrl(scopes: string[], callbackUrl: string) {
     try {
       const result = this.oAuth2Client.generateAuthUrl({
+        access_type: "offline",
         scope: scopes,
         state: callbackUrl,
       });
@@ -33,10 +43,12 @@ export class GoogleAuth {
     }
   }
 
-  public getOAuth2(token: any) {
+  public getOAuth2(tokens: any) {
     try {
-      this.oAuth2Client.setCredentials(token);
-      console.log("Toke", this.oAuth2Client);
+      console.log("Token", tokens);
+      this.oAuth2Client.setCredentials(tokens);
+      console.log("AuthClient", this.oAuth2Client);
+      // new google.auth.OAuth2({ version: "v2", auth: this.oAuth2Client });
       return google.oauth2({ version: "v2", auth: this.oAuth2Client });
     } catch (error) {
       throw error;

@@ -3,24 +3,18 @@ import { CaptureEntity } from "../entities/capture.entity.js";
 import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection, { CreateOptionsInterface, DocumentInterface } from "@src/database/connection.js";
 
-export class CreateCaptureService {
+export class UploadCaptureService {
   private db: DatabaseConnection;
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(doc: DocumentInterface, options?: CreateOptionsInterface) {
-    const obj: any = {
-      date: new Date(doc.date),
-      activity: doc.activity,
-      description: doc.description,
-      observer: doc.observer,
-      clusters: doc.clusters,
-      isDraft: false,
-    };
-    const captureEntity = new CaptureEntity(obj);
-
+  public async handle(id: string, doc: DocumentInterface, options?: CreateOptionsInterface) {
+    const captureEntity = new CaptureEntity({
+      file: doc.file,
+    } as any);
     const captureRepository = new CaptureRepository(this.db);
-    const result = await captureRepository.create(captureEntity.capture, options);
+    const result = await captureRepository.update(id, captureEntity.capture, options);
+    console.log(result);
     return result;
   }
 }

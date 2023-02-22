@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 export interface CaptureInterface {
   _id?: string;
   date?: Date;
