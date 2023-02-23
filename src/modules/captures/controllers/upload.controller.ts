@@ -58,11 +58,12 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
     }
     console.log(5);
     // Upload to drive
-    const uploaded = await googleDrive.uploadFile(req.files[0], googleDriveId as string);
+    const files = req.files as Express.Multer.File[];
+    const uploaded = await googleDrive.uploadFile(files[0], googleDriveId as string);
     console.log(uploaded);
 
     // Generate public URL
-    const publicUrl = await googleDrive.generatePublicUrl(uploaded?.id);
+    const publicUrl = await googleDrive.generatePublicUrl(uploaded?.id as string);
     req.body.file = {
       id: uploaded?.id,
       name: uploaded?.name,
@@ -71,13 +72,11 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
     };
 
     const uploadCaptureService = new UploadCaptureService(db);
-    const result = await uploadCaptureService.handle(req.body.capture_id, req.body, { session });
+    await uploadCaptureService.handle(req.body.capture_id, req.body, { session });
 
     await db.commitTransaction();
 
-    res.status(201).json({
-      _id: result._id,
-    });
+    res.status(201).json({});
   } catch (error) {
     await db.abortTransaction();
     next(error);
