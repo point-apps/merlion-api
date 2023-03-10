@@ -13,7 +13,7 @@ export class SigninUserService {
   public async handle(username: string, password: string) {
     const query: QueryInterface = {
       fields: "",
-      filter: { username: username },
+      filter: { $or: [{ username: username }, { email: username }] },
       page: 1,
       pageSize: 1,
       sort: "",
