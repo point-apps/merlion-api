@@ -7,8 +7,15 @@ interface InviteResponseInterface {
   _id: string;
   email: string;
   name: string;
-  emailVerificaitonCode: string;
+  password: string;
+  emailVerificationCode: string;
   acknowledge: boolean;
+}
+
+function pad(num: string, size: number) {
+  num = num.toString();
+  while (num.length < size) num = "0" + num;
+  return num;
 }
 
 export class InviteUserService {
@@ -24,7 +31,13 @@ export class InviteUserService {
     });
 
     await userEntity.generateRandomUsername();
-    await userEntity.generateRandomPassword();
+    const pass = pad(
+      Number(Math.random() * 100000000)
+        .toFixed(0)
+        .toString(),
+      8
+    );
+    await userEntity.setPassword(pass);
     userEntity.generateEmailValidationCode();
 
     const userRepository = new UserRepository(this.db);
@@ -35,7 +48,8 @@ export class InviteUserService {
       _id: createResponse._id,
       email: readResponse.email,
       name: readResponse.name,
-      emailVerificaitonCode: readResponse.emailVerificaitonCode,
+      emailVerificationCode: readResponse.emailVerificationCode,
+      password: pass,
       acknowledge: createResponse.acknowledged,
     } as InviteResponseInterface;
   }

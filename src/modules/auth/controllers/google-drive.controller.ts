@@ -45,12 +45,7 @@ export const googleDrive = async (req: Request, res: Response, next: NextFunctio
         body: fs.createReadStream(filePath),
       },
     });
-
-    console.log(response.data);
-
-    return res.json("asd");
   } catch (error) {
-    return res.json("error");
     next(error);
   }
 };

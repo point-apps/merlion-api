@@ -9,6 +9,7 @@ export class CreateCaptureService {
     this.db = db;
   }
   public async handle(doc: DocumentInterface, options?: CreateOptionsInterface) {
+    console.log("doc", doc);
     const obj: any = {
       date: new Date(doc.date),
       activity: doc.activity,
@@ -16,6 +17,7 @@ export class CreateCaptureService {
       observer: doc.observer,
       clusters: doc.clusters,
       isDraft: false,
+      createdBy_id: doc.createdBy_id,
     };
     const captureEntity = new CaptureEntity(obj);
 

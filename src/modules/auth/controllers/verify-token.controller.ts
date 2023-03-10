@@ -20,6 +20,7 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
       email: result.email,
       username: result.username,
       role: result.role,
+      googleDriveId: result.googleDriveId,
     });
   } catch (error) {
     next(error);

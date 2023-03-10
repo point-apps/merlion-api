@@ -14,23 +14,23 @@ export const invite = async (req: Request, res: Response, next: NextFunction) =>
 
     const inviteUserService = new InviteUserService(db);
     const result = await inviteUserService.handle(req.body, { session });
-
     const message = {
       to: result.email,
       subject: "Verification Account",
       template: "users/email/email-verification",
       context: {
         name: req.body.name,
-        verificationLink: result.emailVerificaitonCode,
+        password: result.password,
+        verificationLink: `https://api.merlion.pointhub.app/v1/auth/accept-invitation?code=${result.emailVerificationCode}`,
       },
     };
 
-    await Mailer.send(message);
+    Mailer.send(message);
 
     await db.commitTransaction();
 
     res.status(201).json({
-      _id: "result._id",
+      _id: result._id,
     });
   } catch (error) {
     console.log("error,", error);

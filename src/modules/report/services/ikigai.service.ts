@@ -7,10 +7,12 @@ export class IkigaiService {
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(query: QueryInterface, search: any) {
+  public async handle(query: QueryInterface, search: any, createdBy_id: any) {
     const captureRepository = new CaptureRepository(this.db);
 
     const aggregates: any = [];
+
+    aggregates.push({ $match: { createdBy_id: createdBy_id } });
 
     const all = [];
     const nin = [];

@@ -8,7 +8,7 @@ export interface UserInterface {
   password?: string;
   name?: string;
   role?: string;
-  emailValidationCode?: string;
+  emailVerificationCode?: string;
   status?: "registered" | "activated" | "suspended";
   googleDriveId?: string;
   oauth?: {
@@ -29,7 +29,7 @@ export class UserEntity {
   }
 
   public generateEmailValidationCode() {
-    this.user.emailValidationCode = new ObjectId().toString();
+    this.user.emailVerificationCode = new ObjectId().toString();
   }
 
   public async generateRandomUsername() {
@@ -38,6 +38,10 @@ export class UserEntity {
 
   public async generateRandomPassword() {
     this.user.password = await hash(new Date().toString());
+  }
+
+  public async setPassword(value: string) {
+    this.user.password = await hash(value);
   }
 
   public suspendUser() {

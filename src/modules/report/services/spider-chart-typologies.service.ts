@@ -14,10 +14,12 @@ export class SpiderChartTypologiesService {
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(query: QueryInterface) {
+  public async handle(query: QueryInterface, createdBy_id: any) {
     const captureRepository = new CaptureRepository(this.db);
 
     const aggregates: any = [];
+
+    aggregates.push({ $match: { createdBy_id: createdBy_id } });
 
     aggregates.push({
       $match: {

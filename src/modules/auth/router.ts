@@ -5,6 +5,7 @@ const router = Router();
 
 router.post("/signin", controller.signin);
 router.post("/verify-token", controller.verifyToken);
+router.get("/accept-invitation", controller.acceptInvitation);
 router.get("/google-drive", controller.googleDrive);
 router.get("/google/get-auth-url", controller.googleGetAuthUrl);
 router.get("/google/oauth-callback", controller.googleOauthCallback);

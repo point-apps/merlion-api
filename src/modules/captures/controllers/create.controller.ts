@@ -14,23 +14,21 @@ export const create = async (req: Request, res: Response, next: NextFunction) =>
     /**
      * Request should come from authenticated user
      */
-    console.log("is authenticated");
     const authorizationHeader = req.headers.authorization ?? "";
 
     if (authorizationHeader === "") {
       throw new ApiError(401);
     }
-    console.log(authorizationHeader);
     const verifyTokenUserService = new VerifyTokenUserService(db);
     const authUser = (await verifyTokenUserService.handle(authorizationHeader)) as any;
-    console.log(authUser);
+
     /**
      * Validate all request data
      */
     validate(req.body);
 
     const createCaptureService = new CreateCaptureService(db);
-    const result = await createCaptureService.handle(req.body, { session });
+    const result = await createCaptureService.handle({ ...req.body, createdBy_id: authUser._id }, { session });
 
     await db.commitTransaction();
 

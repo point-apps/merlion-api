@@ -7,7 +7,7 @@ export class ReadManyCaptureService {
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(query: QueryInterface, search: any) {
+  public async handle(query: QueryInterface, search: any, createdBy_id: any) {
     const captureRepository = new CaptureRepository(this.db);
 
     const searchData: any = [];
@@ -20,6 +20,8 @@ export class ReadManyCaptureService {
     }
 
     const aggregates: any = [];
+
+    aggregates.push({ $match: { createdBy_id: createdBy_id } });
 
     if (searchData.length) {
       aggregates.push({ $match: { $or: searchData } });

@@ -17,7 +17,6 @@ export const readMany = async (req: Request, res: Response, next: NextFunction) 
     };
 
     const result = await readManyUserService.handle(query);
-    console.log(result);
 
     res.status(200).json(result);
   } catch (error) {

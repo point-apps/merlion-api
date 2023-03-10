@@ -1,8 +1,16 @@
-<p>Thanks for signing up
-  <span class="font-semibold">{{ name }}</span>,
+<p>Hello
+  <span class="font-semibold capitalize">{{ name }}</span>,
 </p>
 
-<p>Please click link below to verify your email address to get access to our apps.</p>
+<p>You get an invitation to join the merlion application, please click link below to verify your email address to get access to our apps.</p>
+<div>
+  Login Credential <br/>
+  Email: (your email address) <br/>
+  Password: {{ password }}
+</div>
+
+<br/>
+
 {{#> button-link href=verificationLink}}
 Verify Email Address
 {{/button-link}}

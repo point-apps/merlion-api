@@ -77,7 +77,7 @@ class Mailer {
     this.transporter.use(
       "compile",
       inlineCss({
-        extraCss: fs.readFileSync("./src/services/mailer/resources/styles.css").toString(),
+        extraCss: fs.readFileSync("./src/services/mailer/resources/styles.css"),
       }) as PluginFunction
     );
   }

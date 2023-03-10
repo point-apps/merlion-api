@@ -1,4 +1,5 @@
 export { signin } from "./signin.controller.js";
+export { acceptInvitation } from "./accept-invitation.controller.js";
 export { verifyToken } from "./verify-token.controller.js";
 export { exchangeToken } from "./exchange-token.controller.js";
 export { googleDrive } from "./google-drive.controller.js";

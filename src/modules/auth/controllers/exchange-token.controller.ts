@@ -19,7 +19,6 @@ export const exchangeToken = async (req: Request, res: Response, next: NextFunct
 
     const readUserByEmailService = new ReadManyUserService(db);
     const result = await readUserByEmailService.handle(query);
-    console.log(result);
     const accessToken = signNewToken(issuer, secretKey, result.data[0]._id.toString());
     const refreshToken = generateRefreshToken(issuer, secretKey, result.data[0]._id.toString());
 
@@ -28,6 +27,7 @@ export const exchangeToken = async (req: Request, res: Response, next: NextFunct
       email: result.data[0].email,
       username: result.data[0].username,
       role: result.data[0].role,
+      googleDriveId: result.data[0].googleDriveId,
       accessToken: accessToken,
       refreshToken: refreshToken,
     });

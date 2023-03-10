@@ -603,8 +603,8 @@ p {
   margin-right: auto;
 }
 
-.table {
-  display: table;
+.max-h-32 {
+  max-height: 8rem;
 }
 
 .text-center {
@@ -618,6 +618,10 @@ p {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .text-gray-400 {
