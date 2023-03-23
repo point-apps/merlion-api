@@ -1,7 +1,6 @@
 import { ApiError } from "@point-hub/express-error-handler";
 import { secretKey } from "@src/config/auth.js";
 import DatabaseConnection from "@src/database/connection.js";
-import { UserInterface } from "@src/modules/users/entities/user.entity";
 import { ReadUserService } from "@src/modules/users/services/read.service.js";
 import { verifyToken } from "@src/utils/jwt.js";
 
@@ -24,7 +23,7 @@ export class VerifyTokenUserService {
     }
 
     const readUserService = new ReadUserService(this.db);
-    const user: UserInterface = (await readUserService.handle(result.sub, {
+    const user: any = (await readUserService.handle(result.sub, {
       restrictedFields: ["password"],
     })) as any;
 
