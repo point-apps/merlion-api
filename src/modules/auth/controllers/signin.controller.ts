@@ -18,6 +18,7 @@ export const signin = async (req: Request, res: Response, next: NextFunction) =>
       role: result.role,
       accessToken: result.accessToken,
       refreshToken: result.refreshToken,
+      googleScopes: result.googleScopes,
     });
   } catch (error) {
     next(error);

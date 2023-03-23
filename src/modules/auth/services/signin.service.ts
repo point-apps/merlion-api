@@ -41,6 +41,7 @@ export class SigninUserService {
       role: result.data[0].role,
       accessToken: accessToken,
       refreshToken: refreshToken,
+      googleScopes: result.data[0].oauth?.google?.tokens?.scope ?? "",
     };
   }
 }

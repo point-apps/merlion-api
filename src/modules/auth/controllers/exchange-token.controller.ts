@@ -27,7 +27,7 @@ export const exchangeToken = async (req: Request, res: Response, next: NextFunct
       email: result.data[0].email,
       username: result.data[0].username,
       role: result.data[0].role,
-      googleDriveId: result.data[0].googleDriveId,
+      googleScopes: result.data[0].oauth?.google?.tokens?.scope ?? "",
       accessToken: accessToken,
       refreshToken: refreshToken,
     });

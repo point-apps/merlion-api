@@ -34,8 +34,8 @@ export class VerifyTokenUserService {
       email: user.email,
       username: user.username,
       role: user.role,
-      googleDriveId: user.googleDriveId,
       oauth: user.oauth,
+      googleScopes: user.oauth?.google?.tokens?.scope ?? "",
     };
   }
 }
