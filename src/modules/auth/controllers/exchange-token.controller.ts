@@ -18,7 +18,7 @@ export const exchangeToken = async (req: Request, res: Response, next: NextFunct
     };
 
     const readUserByEmailService = new ReadManyUserService(db);
-    const result = await readUserByEmailService.handle(query);
+    const result = (await readUserByEmailService.handle(query)) as any;
     const accessToken = signNewToken(issuer, secretKey, result.data[0]._id.toString());
     const refreshToken = generateRefreshToken(issuer, secretKey, result.data[0]._id.toString());
 
