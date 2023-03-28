@@ -23,15 +23,14 @@ export class VerifyTokenUserService {
     }
 
     const readUserService = new ReadUserService(this.db);
-    const user: any = (await readUserService.handle(result.sub, {
-      restrictedFields: ["password"],
-    })) as any;
+    const user: any = (await readUserService.handle(result.sub, {})) as any;
 
     return {
       _id: user._id,
       name: user.name,
       email: user.email,
       username: user.username,
+      password: user.password,
       role: user.role,
       oauth: user.oauth,
       googleScopes: user.oauth?.google?.tokens?.scope ?? "",
