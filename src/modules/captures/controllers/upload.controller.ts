@@ -22,15 +22,11 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
     if (authorizationHeader === "") {
       throw new ApiError(401);
     }
-    console.log(authorizationHeader);
     const verifyTokenUserService = new VerifyTokenUserService(db);
     const authUser = (await verifyTokenUserService.handle(authorizationHeader)) as any;
-    console.log(authUser);
     /**
      * Validate all request data
      */
-    console.log("validate");
-    console.log(req.body);
     validate(req.body);
 
     const tokens = authUser.oauth?.google?.tokens;
@@ -40,11 +36,12 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
 
     const googleDrive = new GoogleDrive(tokens);
     await googleDrive.refreshToken();
-    console.log(3);
+
     // If user don't have project folder in their google drive then create a new one
+    console.log("authUser", authUser);
     let googleDriveId = authUser.googleDriveId;
+    console.log("googledriveID", googleDriveId);
     if (!googleDriveId) {
-      console.log(4);
       googleDriveId = await googleDrive.createFolder();
       const updateService = new UpdateGoogleDriveFolderService(db);
       console.log(authUser._id, googleDriveId);
@@ -56,20 +53,25 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
         session
       );
     }
-    console.log(5);
+    console.log("googledriveID2", googleDriveId);
+
+    req.body.files = [];
+
     // Upload to drive
     const files = req.files as Express.Multer.File[];
-    const uploaded = await googleDrive.uploadFile(files[0], googleDriveId as string);
-    console.log(uploaded);
+    console.log(files.length, files);
+    for (let i = 0; i < files.length; i++) {
+      const uploaded = await googleDrive.uploadFile(files[i], googleDriveId as string);
 
-    // Generate public URL
-    const publicUrl = await googleDrive.generatePublicUrl(uploaded?.id as string);
-    req.body.file = {
-      id: uploaded?.id,
-      name: uploaded?.name,
-      mimeType: uploaded?.mimeType,
-      url: publicUrl?.webContentLink,
-    };
+      // Generate public URL
+      const publicUrl = await googleDrive.generatePublicUrl(uploaded?.id as string);
+      req.body.files.push({
+        id: uploaded?.id,
+        name: uploaded?.name,
+        mimeType: uploaded?.mimeType,
+        url: publicUrl?.webContentLink,
+      });
+    }
 
     const uploadCaptureService = new UploadCaptureService(db);
     await uploadCaptureService.handle(req.body.capture_id, req.body, { session });

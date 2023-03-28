@@ -10,7 +10,7 @@ export class UploadCaptureService {
   }
   public async handle(id: string, doc: DocumentInterface, options?: CreateOptionsInterface) {
     const captureEntity = new CaptureEntity({
-      file: doc.file,
+      files: doc.files,
     } as any);
     const captureRepository = new CaptureRepository(this.db);
     const result = await captureRepository.update(id, captureEntity.capture, options);

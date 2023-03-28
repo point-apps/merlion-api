@@ -33,6 +33,7 @@ export class VerifyTokenUserService {
       password: user.password,
       role: user.role,
       oauth: user.oauth,
+      googleDriveId: user.googleDriveId,
       googleScopes: user.oauth?.google?.tokens?.scope ?? "",
     };
   }
