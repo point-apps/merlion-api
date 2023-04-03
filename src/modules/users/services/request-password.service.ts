@@ -15,7 +15,7 @@ export class RequestPasswordService {
       fields: "",
       filter: {
         email: {
-          $regex: doc.email,
+          $regex: `^${doc.email}$`,
           $options: "i",
         },
       },

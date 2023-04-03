@@ -11,7 +11,7 @@ export class ReadUserByEmailService {
       fields: "",
       filter: {
         email: {
-          $regex: email,
+          $regex: `^${email}$`,
           $options: "i",
         },
       },

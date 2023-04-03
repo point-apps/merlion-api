@@ -17,13 +17,13 @@ export class SigninUserService {
         $or: [
           {
             username: {
-              $regex: username,
+              $regex: `^${username}$`,
               $options: "i",
             },
           },
           {
             email: {
-              $regex: username,
+              $regex: `^${username}$`,
               $options: "i",
             },
           },
