@@ -9,12 +9,21 @@ export class UploadCaptureService {
     this.db = db;
   }
   public async handle(id: string, doc: DocumentInterface, options?: CreateOptionsInterface) {
-    const captureEntity = new CaptureEntity({
-      files: doc.files,
-    } as any);
     const captureRepository = new CaptureRepository(this.db);
-    const result = await captureRepository.update(id, captureEntity.capture, options);
-    console.log(result);
+    const result = await captureRepository.update(
+      id,
+      {
+        $push: {
+          files: {
+            $each: doc.files,
+          },
+        },
+      },
+      {
+        session: options?.session,
+        xraw: true,
+      }
+    );
     return result;
   }
 }

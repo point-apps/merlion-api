@@ -38,13 +38,10 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
     await googleDrive.refreshToken();
 
     // If user don't have project folder in their google drive then create a new one
-    console.log("authUser", authUser);
     let googleDriveId = authUser.googleDriveId;
-    console.log("googledriveID", googleDriveId);
     if (!googleDriveId) {
       googleDriveId = await googleDrive.createFolder();
       const updateService = new UpdateGoogleDriveFolderService(db);
-      console.log(authUser._id, googleDriveId);
       await updateService.handle(
         authUser._id,
         {
@@ -53,7 +50,6 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
         session
       );
     }
-    console.log("googledriveID2", googleDriveId);
 
     req.body.files = [];
 

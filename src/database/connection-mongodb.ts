@@ -259,11 +259,15 @@ export default class MongoDbConnection implements IDatabaseAdapter {
 
     const updateOptions = options as UpdateOptions;
 
-    // inject date of updated
-    document.updatedAt = new Date();
-
     try {
-      const result = await this._collection.updateOne({ _id: new ObjectId(id) }, { $set: document }, updateOptions);
+      let result;
+      if (options?.xraw === true) {
+        console.log(id, document);
+        result = await this._collection.updateOne({ _id: new ObjectId(id) }, document, updateOptions);
+      } else {
+        result = await this._collection.updateOne({ _id: new ObjectId(id) }, { $set: document }, updateOptions);
+      }
+      console.log(result);
 
       return {
         acknowledged: result.acknowledged,
@@ -273,6 +277,7 @@ export default class MongoDbConnection implements IDatabaseAdapter {
         matchedCount: result.matchedCount,
       };
     } catch (error) {
+      console.log(error);
       if (error instanceof MongoServerError) {
         throw new MongoError(error);
       }

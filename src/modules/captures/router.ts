@@ -11,5 +11,6 @@ router.post("/", controller.create);
 router.post("/upload", upload.any(), controller.upload);
 router.patch("/:id", controller.update);
 router.delete("/:id", controller.destroy);
+router.post("/:id/delete-upload", controller.deleteUpload);
 
 export default router;

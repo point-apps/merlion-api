@@ -34,6 +34,7 @@ export interface ReadManyOptionsInterface {
 }
 
 export interface UpdateOptionsInterface {
+  xraw?: boolean;
   session: unknown;
 }
 
