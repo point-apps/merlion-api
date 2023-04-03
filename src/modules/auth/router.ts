@@ -4,6 +4,8 @@ import * as controller from "./controllers/index.js";
 const router = Router();
 
 router.post("/signin", controller.signin);
+router.post("/request-password", controller.requestPassword);
+router.post("/reset-password", controller.resetPassword);
 router.post("/verify-token", controller.verifyToken);
 router.get("/accept-invitation", controller.acceptInvitation);
 router.get("/google-drive", controller.googleDrive);

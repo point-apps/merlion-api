@@ -8,6 +8,7 @@ export interface UserInterface {
   password?: string;
   name?: string;
   role?: string;
+  resetPasswordCode?: string;
   emailVerificationCode?: string;
   status?: "registered" | "activated" | "suspended";
   googleDriveId?: string;
@@ -30,6 +31,10 @@ export class UserEntity {
 
   public generateEmailValidationCode() {
     this.user.emailVerificationCode = new ObjectId().toString();
+  }
+
+  public generateResetPasswordCode() {
+    this.user.resetPasswordCode = new ObjectId().toString();
   }
 
   public async generateRandomUsername() {

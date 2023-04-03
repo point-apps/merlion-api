@@ -3,8 +3,9 @@ import Validatorjs from "validatorjs";
 
 export const validate = (body: any) => {
   const validation = new Validatorjs(body, {
-    username: "required",
-    password: "required",
+    email: "required|email",
+    newPassword: "required|min:8",
+    code: "required",
   });
 
   if (validation.fails()) {

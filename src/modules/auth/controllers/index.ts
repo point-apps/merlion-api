@@ -1,4 +1,6 @@
 export { signin } from "./signin.controller.js";
+export { requestPassword } from "./request-password.controller.js";
+export { resetPassword } from "./reset-password.controller.js";
 export { acceptInvitation } from "./accept-invitation.controller.js";
 export { verifyToken } from "./verify-token.controller.js";
 export { exchangeToken } from "./exchange-token.controller.js";
