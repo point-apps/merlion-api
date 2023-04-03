@@ -9,7 +9,12 @@ export class ReadUserByEmailService {
   public async handle(email: string) {
     const query: QueryInterface = {
       fields: "",
-      filter: { email: email },
+      filter: {
+        email: {
+          $regex: email,
+          $options: "i",
+        },
+      },
       page: 1,
       pageSize: 1,
       sort: "",
