@@ -17,10 +17,7 @@ export class ResetPasswordService {
       filter: {
         $and: [
           {
-            email: {
-              $regex: email,
-              $options: "i",
-            },
+            email: email,
           },
           {
             requestPasswordCode: code,
