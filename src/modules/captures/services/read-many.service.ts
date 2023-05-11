@@ -21,6 +21,25 @@ export class ReadManyCaptureService {
 
     const aggregates: any = [];
 
+    aggregates.push(
+      {
+        $lookup: {
+          from: "users",
+          localField: "createdBy_id",
+          foreignField: "_id",
+          pipeline: [{ $project: { name: 1 } }],
+          as: "createdBy",
+        },
+      },
+      {
+        $set: {
+          createdBy: {
+            $arrayElemAt: ["$createdBy", 0],
+          },
+        },
+      }
+    );
+
     if (searchData.length) {
       aggregates.push({ $match: { $or: searchData } });
     }
@@ -37,6 +56,10 @@ export class ReadManyCaptureService {
 
     if (query && query.sort) {
       aggregates.push({ $sort: { date: -1 } });
+    }
+
+    if (query && query.filter) {
+      aggregates.push({ $match: { ...query.filter } });
     }
 
     const aggregateResult = await captureRepository.aggregate(aggregates, query);
