@@ -16,7 +16,7 @@ export class CreateCaptureService {
       description: doc.description,
       observer: doc.observer,
       clusters: doc.clusters,
-      isDraft: false,
+      isDraft: doc.isDraft,
       createdBy_id: doc.createdBy_id,
     };
     const captureEntity = new CaptureEntity(obj);

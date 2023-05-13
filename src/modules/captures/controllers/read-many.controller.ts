@@ -29,6 +29,14 @@ export const readMany = async (req: Request, res: Response, next: NextFunction) 
       sort: (req.query.sort as string) ?? "",
     };
 
+    if (query.filter["isDraft"]) {
+      if (query.filter["isDraft"] === "false") {
+        query.filter["isDraft"] = false;
+      } else {
+        query.filter["isDraft"] = true;
+      }
+    }
+
     const result = await readManyCaptureService.handle(query, req.query.search, authUser._id);
 
     res.status(200).json(result);
