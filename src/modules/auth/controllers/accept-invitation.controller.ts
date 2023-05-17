@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { AcceptInvitationService } from "../services/accept-invitation.service.js";
+import { appUrl } from "@src/config/app.js";
 import { QueryInterface } from "@src/database/connection.js";
 import { db } from "@src/database/database.js";
 import { UserRepository } from "@src/modules/users/repositories/user.repository.js";
@@ -20,7 +21,7 @@ export const acceptInvitation = async (req: Request, res: Response, next: NextFu
 
     const userRepository = new UserRepository(db);
     const result = (await userRepository.readMany(query)) as any;
-    console.log(result);
+
     const user = result.data[0];
 
     if (!user) {
@@ -32,7 +33,7 @@ export const acceptInvitation = async (req: Request, res: Response, next: NextFu
 
     await db.commitTransaction();
 
-    return res.redirect("https://merlion.pointhub.app");
+    return res.redirect(appUrl);
   } catch (error) {
     await db.abortTransaction();
     next(error);
