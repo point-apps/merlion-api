@@ -1,3 +1,4 @@
+import { endOfDay, startOfDay } from "date-fns";
 import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection, { QueryInterface } from "@src/database/connection.js";
 import { fields, limit, page, skip, sort } from "@src/database/mongodb-util.js";
@@ -17,6 +18,12 @@ export class ReadManyCaptureService {
     }
     if (search.cluster) {
       searchData.push({ clusters: { $elemMatch: { name: { $regex: search.cluster, $options: "i" } } } });
+    }
+
+    if (search.fromDate && search.toDate) {
+      searchData.push({
+        date: { $gte: startOfDay(new Date(search.fromDate)), $lte: endOfDay(new Date(search.toDate)) },
+      });
     }
 
     const aggregates: any = [];
