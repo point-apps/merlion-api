@@ -2,6 +2,7 @@ import { ApiError } from "@point-hub/express-error-handler";
 import { NextFunction, Request, Response } from "express";
 import { validate } from "../request/invite.request.js";
 import { InviteUserService } from "../services/invite.service.js";
+import { apiUrl } from "@src/config/app.js";
 import { db } from "@src/database/database.js";
 import { ReadUserByEmailService } from "@src/modules/auth/services/read-user-by-email.service.js";
 import Mailer from "@src/services/mailer/index.js";
@@ -29,7 +30,7 @@ export const invite = async (req: Request, res: Response, next: NextFunction) =>
       context: {
         name: req.body.name,
         password: result.password,
-        verificationLink: `https://api.merlion.pointhub.app/v1/auth/accept-invitation?code=${result.emailVerificationCode}`,
+        verificationLink: `${apiUrl}/v1/auth/accept-invitation?code=${result.emailVerificationCode}`,
       },
     };
 

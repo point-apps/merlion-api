@@ -1,6 +1,7 @@
 import { ApiError } from "@point-hub/express-error-handler";
 import { ObjectId } from "mongodb";
 import { UserRepository } from "../repositories/user.repository.js";
+import { appUrl } from "@src/config/app.js";
 import DatabaseConnection, { CreateOptionsInterface, DocumentInterface } from "@src/database/connection.js";
 import Mailer from "@src/services/mailer/index.js";
 
@@ -41,7 +42,7 @@ export class RequestPasswordService {
       subject: "Request Reset Password",
       template: "users/email/request-password",
       context: {
-        resetPasswordLink: `https://merlion.pointhub.app/reset-password?code=${requestPasswordCode}`,
+        resetPasswordLink: `${appUrl}/reset-password?code=${requestPasswordCode}`,
       },
     };
 
