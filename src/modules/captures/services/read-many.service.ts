@@ -8,7 +8,7 @@ export class ReadManyCaptureService {
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(query: QueryInterface, search: any, createdBy_id: any) {
+  public async handle(query: QueryInterface, search: any, createdBy_id: any, role?: string) {
     const captureRepository = new CaptureRepository(this.db);
 
     const searchData: any = [];
@@ -51,7 +51,9 @@ export class ReadManyCaptureService {
       aggregates.push({ $match: { $or: searchData } });
     }
 
-    aggregates.push({ $match: { createdBy_id: createdBy_id } });
+    if (role !== "admin") {
+      aggregates.push({ $match: { createdBy_id: createdBy_id } });
+    }
 
     if (query && query.fields) {
       aggregates.push({ $project: fields(query.fields) });
