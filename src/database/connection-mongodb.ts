@@ -57,7 +57,9 @@ export default class MongoDbConnection implements IDatabaseAdapter {
   public session: ClientSession | undefined;
 
   constructor(config: IDatabaseConfig) {
-    const options: MongoClientOptions = {};
+    const options: MongoClientOptions = {
+      replicaSet: "rs",
+    };
 
     this.config = config;
     this.client = new MongoClient(this.url(), options);

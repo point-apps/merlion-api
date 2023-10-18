@@ -33,11 +33,12 @@ export const readMany = async (req: Request, res: Response, next: NextFunction) 
       if (query.filter["isDraft"] === "false") {
         query.filter["isDraft"] = false;
       } else {
+        authUser.role = "user";
         query.filter["isDraft"] = true;
       }
     }
 
-    const result = await readManyCaptureService.handle(query, req.query.search, authUser._id);
+    const result = await readManyCaptureService.handle(query, req.query.search, authUser._id, authUser.role);
 
     res.status(200).json(result);
   } catch (error) {
