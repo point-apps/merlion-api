@@ -42,7 +42,7 @@ export class RequestPasswordService {
       subject: "Request Reset Password",
       template: "users/email/request-password",
       context: {
-        resetPasswordLink: `${appUrl}/reset-password?code=${requestPasswordCode}`,
+        resetPasswordLink: `https://merlion.pointhub.app/reset-password?code=${requestPasswordCode}`,
       },
     };
 
