@@ -9,11 +9,11 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
     db.startTransaction();
 
     const updateUserService = new UpdateUserService(db);
-    const result = await updateUserService.handle(req.params.id, req.body, session);
+    await updateUserService.handle(req.params.id, req.body, session);
 
     await db.commitTransaction();
 
-    res.status(200).json(result);
+    res.status(204).json();
   } catch (error) {
     await db.abortTransaction();
     next(error);
