@@ -44,6 +44,28 @@ export class ReadManyCaptureService {
             $arrayElemAt: ["$createdBy", 0],
           },
         },
+      },
+      {
+        $set: {
+          clusterIds: {
+            $map: {
+              input: "$clusters.cluster_id",
+              in: { $toObjectId: "$$this" },
+            },
+          },
+        },
+      },
+      {
+        $lookup: {
+          from: "clusters",
+          localField: "clusterIds",
+          foreignField: "_id",
+          as: "_cluster",
+          pipeline: [{ $project: { name: 1, description: 1 } }],
+        },
+      },
+      {
+        $unset: ["clusterIds"],
       }
     );
 

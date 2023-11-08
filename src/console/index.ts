@@ -3,7 +3,7 @@ import { ExpressCli } from "@point-hub/express-cli";
 import { fileSearch } from "@point-hub/express-utils";
 
 export class ConsoleKernel {
-  public path = new URL(".", import.meta.url).pathname;
+  public path = new URL(".", import.meta.url.replace("file:///", "")).pathname;
   private command: ExpressCli;
 
   constructor(command: ExpressCli) {

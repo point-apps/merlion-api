@@ -10,4 +10,11 @@ export const usersSeed = [
     name: "Admin",
     role: "admin",
   },
+  {
+    username: "aliakbar",
+    email: "ali5alkaf5@gmail.com",
+    password: password,
+    name: "Ali Akbar",
+    role: "admin",
+  },
 ];

@@ -15,10 +15,12 @@ export class ReadManyClusterService {
       searchData.push({ name: { $regex: search.name, $options: "i" } });
     }
     if (search.description) {
-      searchData.push({ typologies: { $regex: search.description, $options: "i" } });
+      searchData.push({ groups: { $regex: search.description, $options: "i" } });
     }
     if (search.typology) {
-      searchData.push({ typologies: { $regex: search.typology, $options: "i" } });
+      searchData.push({
+        groups: { $elemMatch: { typologies: { $elemMatch: { name: { $regex: search.typology } } } } },
+      });
     }
 
     const pipeline: any = [];

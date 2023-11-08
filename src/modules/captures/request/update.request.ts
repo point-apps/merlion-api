@@ -9,6 +9,7 @@ export const validate = (body: any) => {
     observer: "required",
     clusters: "required",
     isDraft: "required",
+    files: "required",
   });
 
   if (validation.fails()) {
