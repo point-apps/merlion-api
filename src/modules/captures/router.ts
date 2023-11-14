@@ -6,7 +6,7 @@ const router = Router();
 const upload = multer();
 
 router.get("/", controller.readMany);
-router.get("/new", controller.check);
+router.get("/post-counter", controller.postCounter);
 router.get("/:id", controller.read);
 router.post("/", controller.create);
 router.post("/upload", upload.any(), controller.upload);

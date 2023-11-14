@@ -3,7 +3,7 @@ import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection, { QueryInterface } from "@src/database/connection.js";
 import { fields, limit, page, skip, sort } from "@src/database/mongodb-util.js";
 
-export class CheckCaptureService {
+export class PostCounterService {
   private db: DatabaseConnection;
   constructor(db: DatabaseConnection) {
     this.db = db;

@@ -1,11 +1,11 @@
 import { ApiError } from "@point-hub/express-error-handler";
 import { NextFunction, Request, Response } from "express";
-import { CheckCaptureService } from "../services/check.service.js";
+import { PostCounterService } from "../services/post-counter.service.js";
 import { QueryInterface } from "@src/database/connection.js";
 import { db } from "@src/database/database.js";
 import { VerifyTokenUserService } from "@src/modules/auth/services/verify-token.service.js";
 
-export const check = async (req: Request, res: Response, next: NextFunction) => {
+export const postCounter = async (req: Request, res: Response, next: NextFunction) => {
   try {
     /**
      * Request should come from authenticated user
@@ -18,7 +18,7 @@ export const check = async (req: Request, res: Response, next: NextFunction) => 
     const verifyTokenUserService = new VerifyTokenUserService(db);
     const authUser = (await verifyTokenUserService.handle(authorizationHeader)) as any;
 
-    const checkCaptureService = new CheckCaptureService(db);
+    const postCounterService = new PostCounterService(db);
 
     const query: QueryInterface = {
       fields: (req.query.fields as string) ?? "",
@@ -38,7 +38,7 @@ export const check = async (req: Request, res: Response, next: NextFunction) => 
       }
     }
 
-    const result = await checkCaptureService.handle(query, req.query.afterDate, authUser._id, authUser.role);
+    const result = await postCounterService.handle(query, req.query.afterDate, authUser._id, authUser.role);
 
     res.status(200).json(result);
   } catch (error) {
