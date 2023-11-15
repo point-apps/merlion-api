@@ -1,28 +1,21 @@
-import { endOfDay, startOfDay } from "date-fns";
+import { endOfDay, startOfMinute, toDate } from "date-fns";
 import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection, { QueryInterface } from "@src/database/connection.js";
 import { fields, limit, page, skip, sort } from "@src/database/mongodb-util.js";
 
-export class ReadManyCaptureService {
+export class PostCounterService {
   private db: DatabaseConnection;
   constructor(db: DatabaseConnection) {
     this.db = db;
   }
-  public async handle(query: QueryInterface, search: any, createdBy_id: any, role?: string) {
+  public async handle(query: QueryInterface, afterDate: any, createdBy_id: any, role?: string) {
     const captureRepository = new CaptureRepository(this.db);
 
     const searchData: any = [];
 
-    if (search.activity) {
-      searchData.push({ activity: { $regex: search.activity, $options: "i" } });
-    }
-    if (search.cluster) {
-      searchData.push({ clusters: { $elemMatch: { name: { $regex: search.cluster, $options: "i" } } } });
-    }
-
-    if (search.fromDate && search.toDate) {
+    if (afterDate && Date.parse(afterDate)) {
       searchData.push({
-        date: { $gte: startOfDay(new Date(search.fromDate)), $lte: endOfDay(new Date(search.toDate)) },
+        date: { $gte: new Date(afterDate) },
       });
     }
 
@@ -92,6 +85,8 @@ export class ReadManyCaptureService {
     if (query && query.filter) {
       aggregates.push({ $match: { ...query.filter } });
     }
+
+    aggregates.push({ $count: "total" });
 
     const aggregateResult = await captureRepository.aggregate(aggregates, query);
 

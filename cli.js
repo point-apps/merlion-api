@@ -16,5 +16,6 @@ await papiKernel.register();
 // Register Custom Commands
 const customKernel = new CustomKernel(cli);
 await customKernel.register();
+
 // Build CLI
 cli.run(process.argv);
