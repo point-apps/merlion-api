@@ -12,32 +12,34 @@ export const clustersSeed = [
             name: "caring",
             description:
               "Nursing or social working to take care of the other people's physical, medical or general welfare.",
-            descriptionId: "",
+            descriptionId:
+              "Kegiatan yang menunjukkan perhatian dan kepedulian terhadap orang lain baik itu dari sisi fisik, medis atau kesejahteraan umum, seperti tugas perawatan atau kerja sosial.",
             abbr: "CA",
           },
           {
             name: "counseling",
             description: "Helping to find solutions to personal problems or psychological problems of others.",
-            descriptionId: "",
+            descriptionId: "Membantu mencarikan solusi atas masalah pribadi atau masalah psikologis orang lain.",
             abbr: "CO",
           },
           {
             name: "spiritualizing",
             description:
               "Spiritual activities, such as prayer, dhikr, introspection, giving religious advice, give an example to others, delivered a lecture/sermon, and others.",
-            descriptionId: "",
+            descriptionId:
+              "Aktivitas spiritual, seperti kontemplasi dan introspeksi terkait nilai-nilai kehidupan, memberi teladan kepada orang lain, dan lain-lain.",
             abbr: "SP",
           },
           {
             name: "therapy",
             description: "Curing and rehabilitating someone’s physical, mental, or behavior.",
-            descriptionId: "",
+            descriptionId: "Menyembuhkan dan merehabilitasi fisik, mental, atau perilaku seseorang.",
             abbr: "TH",
           },
           {
             name: "volunteering",
             description: "Doing social activities without expecting rewards or awards.",
-            descriptionId: "",
+            descriptionId: "Melakukan aktivitas sosial secara sukarela.",
             abbr: "VO",
           },
         ],
@@ -48,26 +50,28 @@ export const clustersSeed = [
           {
             name: "assisting",
             description: "Helping someone to finish a task by positioning him/herself as subordinate.",
-            descriptionId: "",
+            descriptionId:
+              "Membantu seseorang untuk menyelesaikan tugasnya, dengan menempatkan dirinya sebagai sub-ordinat atau bawahan.",
             abbr: "AS",
           },
           {
             name: "greeting",
             description: "Giving a polite greeting to others, known or not yet known.",
-            descriptionId: "",
+            descriptionId:
+              "Memberikan sapaan secara santun kepada orang lain baik yang sudah maupun yang belum dikenalnya.",
             abbr: "GR",
           },
           {
             name: "informing",
             description: "Giving out information or knowledge to other people.",
-            descriptionId: "",
+            descriptionId: "Menyampaikan informasi, kabar, atau pengetahuan kepada orang lain.",
             abbr: "IN",
           },
           {
             name: "serving",
             description:
               "Serving others with sincerity, regarding it as a noble deed and bring benefits to themselves or others.",
-            descriptionId: "",
+            descriptionId: "Melayani orang lain dengan tulus dan profesional.",
             abbr: "SE",
           },
         ],
@@ -90,20 +94,23 @@ export const clustersSeed = [
             name: "analysing",
             description:
               "Finding the causes carefully to verify the background of the occurrence of an event or a possible occurrence of a future event.",
-            descriptionId: "",
+            descriptionId:
+              "Aktivitas seperti mengurai, membedakan, memilah sesuatu secara metodologis untuk dikelompokkan kembali menurut kriteria tertentu, kemudian dicari kaitannya dan ditafsirkan maknanya.",
             abbr: "AN",
           },
           {
             name: "bookeeping",
             description:
               "Taking notes of incoming and outgoing funds of an individual or an organization, in a special form.",
-            descriptionId: "",
+            descriptionId:
+              "Mencatat transaksi keuangan yang diterima dan dikeluarkan oleh individu atau organisasi, dalam sebuah catatan berstandar tertentu.",
             abbr: "BO",
           },
           {
             name: "programming",
             description: "Designing and formulating a program, interface, and software (computer related).",
-            descriptionId: "",
+            descriptionId:
+              "Merancang dan membuat sebuah program, antar-muka, maupun piranti lunak perangkat berbasis komputer, termasuk diantaranya smartphone dan tablet.",
             abbr: "PR",
           },
         ],
@@ -114,28 +121,31 @@ export const clustersSeed = [
           {
             name: "budgeting",
             description: "Planning, organizing, storing, distributing funds or money.",
-            descriptionId: "",
+            descriptionId: "Merencanakan, mengatur dan mengalokasikan anggaran.",
             abbr: "BU",
           },
           {
             name: "cashiering",
             description:
               "Receiving, storing, paying money according to the systems and procedures, and keeping records of the transactions.",
-            descriptionId: "",
+            descriptionId:
+              "Menerima, menyimpan, membayarkan uang sesuai sistem dan prosedur yang berlaku, serta menyimpan catatannya.",
             abbr: "CA",
           },
           {
             name: "costing",
             description:
               "Monitoring and checking expenditure based on what has been calculated before, for the implementation of a project.",
-            descriptionId: "",
+            descriptionId:
+              "Memantau atau memeriksa pengeluaran dana yang telah diperhitungkan sebelumnya dalam rangka pelaksanaan suatu proyek.",
             abbr: "CO",
           },
           {
             name: "estimating",
             description:
               "Making the calculation of an estimated cost of the work, for the purpose of making a quotation.",
-            descriptionId: "",
+            descriptionId:
+              "Membuat perhitungan perkiraan biaya dari suatu pekerjaan, untuk keperluan pembuatan penawaran harga.",
             abbr: "ES",
           },
         ],
@@ -157,19 +167,19 @@ export const clustersSeed = [
           {
             name: "restoring",
             description: "Repairing and restoring something or someone to the original function.",
-            descriptionId: "",
+            descriptionId: "Memperbaiki sesuatu atau memulihkan seseorang agar kembali kepada kondisi semula.",
             abbr: "RE",
           },
           {
             name: "diagnosing",
             description: "Identifying the cause of a problem.",
-            descriptionId: "",
+            descriptionId: "Mencari dan menemukan akar penyebab dari suatu masalah.",
             abbr: "DI",
           },
           {
             name: "identifying",
             description: "Recognizing someone or something to ensure their.",
-            descriptionId: "",
+            descriptionId: "Mengenali sesuatu atau seseorang agar dapat memastikan kejelasan identitasnya.",
             abbr: "ID",
           },
         ],
@@ -180,37 +190,43 @@ export const clustersSeed = [
           {
             name: "evaluating",
             description: "Assessing something, to determine its price, quality, importance, or condition.",
-            descriptionId: "",
+            descriptionId:
+              "Menimbang atau menilai sesuatu untuk menentukan harga, kualitas, kepentingan, atau kondisinya.",
             abbr: "EV",
           },
           {
             name: "auditing",
             description: "Doing careful examination and correction regarding financial report.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan pemeriksaan dan memberikan ulasan terkait keuangan, prosedur ataupun instalasi, yang dilakukan sesuai dengan kebutuhan.",
             abbr: "AU",
           },
           {
             name: "inspecting",
             description: "Checking for something or someone to ensure their identity.",
-            descriptionId: "",
+            descriptionId:
+              "Memeriksa sesuatu dengan teliti (secara terjadwal ataupun insidentil) untuk memastikan kualitas atau kebenarannya.",
             abbr: "IS",
           },
           {
             name: "investigating",
             description: "Investigation or search for evidence and facts in detail, to reveal the truth.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan penyelidikan atau pencarian bukti dan fakta secara detil, untuk mengungkapkan kejadian sebenarnya.",
             abbr: "IV",
           },
           {
             name: "reviewing",
             description: "Making a report or survey on an activity, performance or events that have passed.",
-            descriptionId: "",
+            descriptionId:
+              "Mengulas sesuatu berupa ringkasan, peninjauan dari berbagai sumber baik mengupas kekurangan dan keunggulan, menafsir sesuatu, serta memberikan komentar terhadap sesuatu secara objektif.",
             abbr: "RE",
           },
           {
             name: "verifying",
             description: "Proving something, by comparing or testing, to ensure the correctness or suitability.",
-            descriptionId: "",
+            descriptionId:
+              "Membuktikan sesuatu dengan cara menelaah atau membandingkan untuk memastikan kebenaran atau kesesuaiannya.",
             abbr: "VE",
           },
         ],
@@ -221,26 +237,28 @@ export const clustersSeed = [
           {
             name: "appraising",
             description: "Assess the value of something (Goods, products, buildings, lands, companies, etc).",
-            descriptionId: "",
+            descriptionId: "Menaksir nilai atau harga dari sesuatu (barang, produk, bangunan, tanah, perusahaan, dll).",
             abbr: "AP",
           },
           {
             name: "observing",
             description: "Paying attention to someone or something cautiously, especially for scientific purposes.",
-            descriptionId: "",
+            descriptionId: "Memperhatikan seseorang atau sesuatu dengan teliti, umumnya untuk kepentingan ilmiah.",
             abbr: "OB",
           },
           {
             name: "researching",
             description:
               "Doing a planned research, to discover the facts, fix or create a new theory, or develop a plan of action based on facts.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan penelitian terhadap sesuatu secara terencana untuk menemukan fakta-fakta dan teori baru atau menyempurnakan teori yang sudah ada.",
             abbr: "RE",
           },
           {
             name: "surveying",
             description: "Paying attention to something or someone carefully, especially to make an opinion or report.",
-            descriptionId: "",
+            descriptionId:
+              "Memperhatikan sesuatu atau seseorang dengan seksama, khususnya untuk membuat suatu opini atau laporan.",
             abbr: "SU",
           },
         ],
@@ -263,32 +281,36 @@ export const clustersSeed = [
             name: "conceptualizing",
             description:
               "Developing a plan to be used as guidelines for the future, based on what is seen, experienced, or believed.",
-            descriptionId: "",
+            descriptionId:
+              "Membuat sebuah konsep untuk dijadikan pedoman di masa depan, berdasarkan apa yang dilihat, dialami, dipikirkan, atau diyakini.",
             abbr: "",
           },
           {
             name: "editing",
             description: "Tidying up and correcting previously typed documents, before they are published.",
-            descriptionId: "",
+            descriptionId:
+              "Menyusun, merapihkan, merubah, mengoreksi, menyempurnakan tulisan/bahan presentasi/audio/video yang telah dibuat sebelumnya sebelum dipublikasikan atau dipresentasikan.",
             abbr: "",
           },
           {
             name: "redacting",
             description: "Choosing a discussion focus and rearrange written documents that are ready to be published.",
-            descriptionId: "",
+            descriptionId:
+              "Memilih fokus pembahasan, menentukan diksi yang tepat dan menyusun kembali (biasanya dengan mengurangi kata/kalimat sensitif) dokumen tertulis sebelum dipublikasikan.",
             abbr: "",
           },
           {
             name: "reporting",
             description:
               "Conveying information, orally or written, regarding something that is happening or what had happened.",
-            descriptionId: "",
+            descriptionId:
+              "Menyusun dan menyampaikan laporan, baik lisan maupun tulisan, mengenai sesuatu yang sedang atau telah terjadi.",
             abbr: "",
           },
           {
             name: "writing",
             description: "Writing articles, ideas, documents, stories, or education tool.",
-            descriptionId: "",
+            descriptionId: "Menulis artikel, ide, dokumen, cerita, blog, atau buku.",
             abbr: "",
           },
         ],
@@ -299,20 +321,23 @@ export const clustersSeed = [
           {
             name: "interpreting",
             description: "Constructing or explaining the meaningof something.",
-            descriptionId: "",
+            descriptionId:
+              "Memahami terlebih dahulu makna atau arti dari sesuatu untuk kemudian menjelaskannya dengan bahasa yang mudah dimengerti orang lain.",
             abbr: "",
           },
           {
             name: "transcribing",
             description: "Rewriting notes or stenographic records that have been made.",
-            descriptionId: "",
+            descriptionId:
+              "Menuliskan kembali ringkasan/rekaman/hasil dikte yang sudah dibuat ke dalam bentuk catatan yang jelas dan lengkap.",
             abbr: "",
           },
           {
             name: "translating",
             description:
               "Writing or speaking something in another language as necessary so that other people who read or hear can understand.",
-            descriptionId: "",
+            descriptionId:
+              "Menterjemahkan suatu pernyataan lisan atau tulisan ke dalam bahasa lain agar dapat dimengerti oleh orang lain yang mendengarkan atau membacanya.",
             abbr: "",
           },
         ],
@@ -323,37 +348,39 @@ export const clustersSeed = [
           {
             name: "compliancing",
             description: "Running and maintaining conformity in accordance to applicable rules.",
-            descriptionId: "",
+            descriptionId: "Menjalankan serta menjaga kepatuhan dan ketaatan terhadap aturan yang berlaku.",
             abbr: "",
           },
           {
             name: "filing",
             description: "Putting files in the correct place so that they are tidy and easily searchable.",
-            descriptionId: "",
+            descriptionId: "Menyimpan berkas/dokumen/file di tempat yang benar dengan rapih agar mudah ditemukan.",
             abbr: "",
           },
           {
             name: "housekeeping",
             description: "Tidying and cleaning, and arranging something (especially indoor).",
-            descriptionId: "",
+            descriptionId:
+              "Menyiapkan, merapihkan, membersihkan, serta menata sesuatu yang bersifat fisik seperti ruangan rumah, hotel, dan perkantoran, atau pun sesuatu yang bersifat informasi/data digital.",
             abbr: "",
           },
           {
             name: "organizing",
             description: "Managing or setting up events, systems and procedures.",
-            descriptionId: "",
+            descriptionId: "Menyusun serta mengatur protokol kegiatan, sistem, benda, dan prosedur.",
             abbr: "",
           },
           {
             name: "scheduling",
             description: "Creating a sequence of tasks or activities, which will be done within a certain period.",
-            descriptionId: "",
+            descriptionId: "Menyusun jadwal tugas atau aktivitas yang akan dilaksanakan dalam periode waktu tertentu.",
             abbr: "",
           },
           {
             name: "typewriting",
             description: "Perform typing or data entry to produce documents, files, articles, etc.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan pengetikan atau memasukkan data untuk menghasilkan dokumen, berkas, artikel, dan lain-lain.",
             abbr: "",
           },
         ],
@@ -376,20 +403,22 @@ export const clustersSeed = [
             name: "liasing",
             description:
               "Being a representative of an organization, to develop network, by contacting, building, and maintaining relationships with customers or others.",
-            descriptionId: "",
+            descriptionId:
+              "Menjadi perwakilan dari suatu organisasi untuk mengembangkan jaringan, dengan cara membangun dan memelihara hubungan dengan pelanggan ataupun stakeholder lainnya.",
             abbr: "",
           },
           {
             name: "relating",
             description:
               "Building a close friendship based on mutual understanding, or share their views and concerns.",
-            descriptionId: "",
+            descriptionId:
+              "Menjalin hubungan persahabatan berdasarkan rasa saling pengertian atau berbagi pandangan dan kepedulian.",
             abbr: "",
           },
           {
             name: "representing",
             description: "Acting or talking on behalf of someone else or another party.",
-            descriptionId: "",
+            descriptionId: "Bertindak atau berbicara atas nama orang/pihak lain.",
             abbr: "",
           },
         ],
@@ -401,26 +430,28 @@ export const clustersSeed = [
             name: "communicating",
             description:
               "Expressing feelings or thoughts, through spoken, written, or body language, so that other people understand the message we are trying to deliver.",
-            descriptionId: "",
+            descriptionId:
+              "Menyampaikan perasaan atau pikiran, dengan bahasa lisan, tulisan, atau gerakan anggota tubuh, sehingga orang lain dapat mengerti apa yang disampaikan",
             abbr: "",
           },
           {
             name: "corresponding",
             description: "Communicating by exchanging written messages such as letters, emails, etc.",
-            descriptionId: "",
+            descriptionId: "Berkomunikasi secara tertulis, seperti melalui surat, email, media sosial, dan lainlain.",
             abbr: "",
           },
           {
             name: "entertaining",
             description: "Making a person or group of people to be entertained.",
-            descriptionId: "",
+            descriptionId: "Aktivitas yang membuat seseorang atau sekelompok orang menjadi terhibur.",
             abbr: "",
           },
           {
             name: "presenting",
             description:
               "Conveying information formally and informally in a manner that it is easily understood by other people.",
-            descriptionId: "",
+            descriptionId:
+              "Menyampaikan/menampilkan sesuatu secara langsung kepada audiens/orang banyak dengan cara yang menarik dan mudah dimengerti.",
             abbr: "",
           },
         ],
@@ -431,40 +462,44 @@ export const clustersSeed = [
           {
             name: "teaching",
             description: "Teaching, delivering science in a good way to be easily understood by others.",
-            descriptionId: "",
+            descriptionId:
+              "Mengajar dan menyampaikan ilmu pengetahuan dengan cara yang baik dan mudah dipahami oleh orang lain.",
             abbr: "",
           },
           {
             name: "training",
             description:
               "Teaching skills, procedures, methods, expertise, etc. to develop the skills and knowledge of one's particular field.",
-            descriptionId: "",
+            descriptionId:
+              "Mengajari keterampilan, prosedur, metoda, keahlian, dan lain-lain untuk mengembangkan pemahaman ataupun kemampuan seseorang.",
             abbr: "",
           },
           {
             name: "mentoring",
             description: "",
-            descriptionId: "",
+            descriptionId:
+              "Mengajarkan orang lain dengan cara memberikan contoh dan arahan agar mencapai keberhasilan.",
             abbr: "",
           },
           {
             name: "consulting",
             description:
               "Keeping things, especially the cultural resources and the environment from the danger of loss, damage, alteration or decay.",
-            descriptionId: "",
+            descriptionId: "Membantu mencarikan solusi atas masalah pribadi atau masalah psikologis orang lain.",
             abbr: "",
           },
           {
             name: "coaching",
             description:
               "Being a partner with other party in order to go in the same direction as well as to strengthen the power the other party.",
-            descriptionId: "",
+            descriptionId:
+              "Bermitra dengan orang lain untuk menemukan dan mengembangkan potensi kekuatan dalam rangka memperjelas dan menyelaraskan tujuan.",
             abbr: "",
           },
           {
             name: "advising",
             description: "Giving an opinion or counseling to other people.",
-            descriptionId: "",
+            descriptionId: "Memberikan nasihat atau saran kepada orang lain.",
             abbr: "",
           },
         ],
@@ -475,19 +510,21 @@ export const clustersSeed = [
           {
             name: "motivating",
             description: "Giving encouragement and optimism to others, so that they can perform at their best.",
-            descriptionId: "",
+            descriptionId:
+              "Memberi semangat dan rasa optimis kepada orang lain, agar mereka dapat berkinerja maksimum.",
             abbr: "",
           },
           {
             name: "guiding",
             description: "Helping other people to find the right goal or the predestined path.",
-            descriptionId: "",
+            descriptionId:
+              "Membimbing orang atau pihak lain agar dapat menemukan sasaran atau jalan yang telah ditetapkan.",
             abbr: "",
           },
           {
             name: "supporting",
             description: "Support a person or a group in order to perform their duties optimally.",
-            descriptionId: "",
+            descriptionId: "Mendukung orang atau kelompok lain agar dapat melaksanakan tugasnya secara optimal.",
             abbr: "",
           },
         ],
@@ -528,13 +565,13 @@ export const clustersSeed = [
             name: "designing",
             description:
               "Creating drawings of somethings (buildings, products, etc) that are planned to be built, by showing the detailed drawings.",
-            descriptionId: "",
+            descriptionId: "Membuat rancangan detail dari suatu produk, sistem, atau bangunan.",
             abbr: "",
           },
           {
             name: "drafting",
             description: "Creating engineering drawings.",
-            descriptionId: "",
+            descriptionId: "Membuat gambar teknik yang biasanya berupa blueprint, skema, diagram, atau denah.",
             abbr: "",
           },
         ],
@@ -545,19 +582,20 @@ export const clustersSeed = [
           {
             name: "creating",
             description: "Using imagination to come up with a new design, product, or service.",
-            descriptionId: "",
+            descriptionId: "Menggunakan imajinasi untuk menemukan suatu rancangan, produk, atau layanan yang baru.",
             abbr: "",
           },
           {
             name: "animating",
             description: "Creating moving pictures out of several static pictures.",
-            descriptionId: "",
+            descriptionId:
+              "Menghasilkan gambar bergerak yang dinamis dari gambar-gambar statis, baik dengan teknik gambar konvensional ataupun digital.",
             abbr: "",
           },
           {
             name: "ideating",
             description: "Coming up with all sorts of concepts.",
-            descriptionId: "",
+            descriptionId: "Memiliki gagasan kreatif atas berbagai hal.",
             abbr: "",
           },
         ],
@@ -569,7 +607,8 @@ export const clustersSeed = [
             name: "synthesizing",
             description:
               "Integrating ideas and information, and then combining those various ideas and information into something new.",
-            descriptionId: "",
+            descriptionId:
+              "Mencari dan mengintegrasikan ide-ide dan informasi yang sudah ada menjadi sesuatu hal yang baru.",
             abbr: "",
           },
         ],
@@ -580,28 +619,32 @@ export const clustersSeed = [
           {
             name: "marketing",
             description: "",
-            descriptionId: "",
+            descriptionId:
+              "Kegiatan menyusun strategi pemasaran, termasuk cara menyajikan layanan/produk kepada publik agar mereka tertarik untuk membeli layanan/produk yang ditawarkan.",
             abbr: "",
           },
           {
             name: "developing",
             description:
               "Changing or inducing changes to become bigger, more powerful, more interesting, and more advanced.",
-            descriptionId: "",
+            descriptionId:
+              "Mengubah sesuatu sehingga menjadi lebih baik, lebih kuat, lebih menarik, dan lebih canggih.",
             abbr: "",
           },
           {
             name: "advertising",
             description:
               "Promoting products or services through mass media to increase the demand of the products or services.",
-            descriptionId: "",
+            descriptionId:
+              "Menampilkan produk, layanan, atau acara melalui media promosi, agar menarik perhatian publik dan meningkatkan penjualan atau partisipasi.",
             abbr: "",
           },
           {
             name: "publishing",
             description:
               "Informing about somethings (products, services, information) in a way that is easy to understand, so that something is becoming well‐known and demanded by people.",
-            descriptionId: "",
+            descriptionId:
+              "Memberitakan atau mengumumkan sesuatu (produk, layanan, informasi) dengan cara yang mudah dimengerti agar diketahui dan diperhatikan orang banyak.",
             abbr: "",
           },
         ],
@@ -613,14 +656,16 @@ export const clustersSeed = [
             name: "strategizing",
             description:
               "Selecting and determining the best route or path toward the target, which is not necessarily thought of by others.",
-            descriptionId: "",
+            descriptionId:
+              "Kegiatan memilih dan menentukan solusi atau jalan terbaik menuju sasaran yang belum tentu terpikirkan oleh orang lain.",
             abbr: "",
           },
           {
             name: "planning",
             description:
               "Determining the plan, making programs, work priorities, revision, adjusting policies, and others.",
-            descriptionId: "",
+            descriptionId:
+              "Membuat perencanaan, program dan prioritas kerja, revisi dan penyesuaian kebijakan, dan lain-lain.",
             abbr: "",
           },
         ],
@@ -631,7 +676,7 @@ export const clustersSeed = [
           {
             name: "visioning",
             description: "Anticipate future events wisely and appropriately define the vision.",
-            descriptionId: "",
+            descriptionId: "Kegiatan mengantisipasi masa depan secara bijak dan menentukan sasaran dengan tepat.",
             abbr: "",
           },
         ],
@@ -642,7 +687,7 @@ export const clustersSeed = [
           {
             name: "acting",
             description: "Expressing different roles different from who we really are.",
-            descriptionId: "",
+            descriptionId: "Mengekspresikan peran-peran yang berbeda dari keadaan diri kita yang sesungguhnya.",
             abbr: "",
           },
         ],
@@ -653,7 +698,8 @@ export const clustersSeed = [
           {
             name: "beautifying",
             description: "Making something or someone more beautiful to look at.",
-            descriptionId: "",
+            descriptionId:
+              "Merubah tampilan sesuatu atau seseorang menjadi lebih menyenangkan atau menarik untuk dipandang.",
             abbr: "",
           },
         ],
@@ -665,7 +711,8 @@ export const clustersSeed = [
             name: "conserving",
             description:
               "Keeping things, especially the cultural resources and the environment from the danger of loss, damage, alteration or decay.",
-            descriptionId: "",
+            descriptionId:
+              "Menjaga sesuatu, khususnya sumber daya budaya dan lingkungan, dari bahaya kehilangan, kerusakan, perubahan, atau kelapukan.",
             abbr: "",
           },
         ],
@@ -676,7 +723,7 @@ export const clustersSeed = [
           {
             name: "cooking",
             description: "Creating and producing food or culinary.",
-            descriptionId: "",
+            descriptionId: "Membuat dan memproduksi makanan atau kuliner.",
             abbr: "",
           },
         ],
@@ -687,7 +734,7 @@ export const clustersSeed = [
           {
             name: "dancing",
             description: "Displaying a beautiful gesture with harmony to the accompaniment rhythm.",
-            descriptionId: "",
+            descriptionId: "Menampilkan gerakan tubuh yang indah dan harmonis, dengan diiringi irama tertentu.",
             abbr: "",
           },
         ],
@@ -698,7 +745,7 @@ export const clustersSeed = [
           {
             name: "dramatizing",
             description: "Making an event or story more interesting to hear, or more dramatic.",
-            descriptionId: "",
+            descriptionId: "Menjadikan suatu peristiwa atau cerita lebih menarik didengar, atau lebih dramatis.",
             abbr: "",
           },
         ],
@@ -709,7 +756,7 @@ export const clustersSeed = [
           {
             name: "modelling",
             description: "A fashion model activity.",
-            descriptionId: "",
+            descriptionId: "Kegiatan seorang model fashion.",
             abbr: "",
           },
         ],
@@ -720,7 +767,7 @@ export const clustersSeed = [
           {
             name: "musical art",
             description: "Related to the art of music, as composer, musical instrument players, and others.",
-            descriptionId: "",
+            descriptionId: "Kegiatan yang berkaitan dengan seni musik, seperti penggubah lagu, pemain alat musik, dll.",
             abbr: "",
           },
         ],
@@ -731,7 +778,7 @@ export const clustersSeed = [
           {
             name: "singing",
             description: "Singing in front of public or audience.",
-            descriptionId: "",
+            descriptionId: "Kegiatan bernyanyi di depan publik atau penonton.",
             abbr: "",
           },
         ],
@@ -742,7 +789,8 @@ export const clustersSeed = [
           {
             name: "visual art",
             description: "Activities related to visual arts such as painting, visual communication, imaging, etc.",
-            descriptionId: "",
+            descriptionId:
+              "Kegiatan yang berkaitan dengan seni visual seperti melukis, desain grafis, membuat patung, menggambar, dan lain-lain.",
             abbr: "",
           },
         ],
@@ -763,20 +811,22 @@ export const clustersSeed = [
           {
             name: "monitoring",
             description: "Keeping an eye on the possibility of a mismatch or imbalance of a job or task.",
-            descriptionId: "",
+            descriptionId:
+              "Mengawasi secara kontinyu kemungkinan ketidaksesuaian atau ketidakseimbangan atas suatu pekerjaan atau tugas.",
             abbr: "",
           },
           {
             name: "safekeeping",
             description:
               "Maintaining the safety and security of something or someone from the risk of accidents, or other hazards.",
-            descriptionId: "",
+            descriptionId:
+              "Menjaga keselamatan untuk memberi rasa aman kepada mahluk hidup dari resiko kecelakaan atau bahaya lainnya.",
             abbr: "",
           },
           {
             name: "securing",
             description: "Safeguarding assets from loss, theft, damage, and others.",
-            descriptionId: "",
+            descriptionId: "Menjaga aset dari resiko kehilangan, kerusakan, dan lain-lain.",
             abbr: "",
           },
         ],
@@ -787,26 +837,29 @@ export const clustersSeed = [
           {
             name: "assembling",
             description: "Putting together parts to form a useable and functional good.",
-            descriptionId: "",
+            descriptionId:
+              "Menyusun/merakit suku cadang atau komponen dari suatu benda atau barang menjadi satu kesatuan yang lengkap dan bisa digunakan.",
             abbr: "",
           },
           {
             name: "building",
             description: "Building houses, buildings, factories, bridges and other structures.",
-            descriptionId: "",
+            descriptionId: "Membuat konstruksi rumah, gedung, pabrik, jembatan, dan struktur lainnya.",
             abbr: "",
           },
           {
             name: "installing",
             description:
               "Combining separate parts of a machine or equipment (eg nuts, bolts, etc.), so that the machine or the tool can be used.",
-            descriptionId: "",
+            descriptionId:
+              "Menempatkan dan memasang sesuatu (barang atau piranti lunak) pada tempat yang seharusnya agar dapat beroperasi dengan baik.",
             abbr: "",
           },
           {
             name: "producing",
             description: "Making or creating something into finished goods or intermediate goods.",
-            descriptionId: "",
+            descriptionId:
+              "Membuat atau menghasilkan suatu barang atau karya baik itu yang sudah jadi atau setengah jadi.",
             abbr: "",
           },
         ],
@@ -817,14 +870,15 @@ export const clustersSeed = [
           {
             name: "finishing",
             description: "To complete the last stage of production, project, or construction.",
-            descriptionId: "",
+            descriptionId: "Kegiatan tahap akhir/sentuhan akhir dari sebuah proses produksi, proyek, atau konstruksi.",
             abbr: "",
           },
           {
             name: "testing",
             description:
               "Conduct testing to prove things work correctly in accordance with the expected specifications.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan uji coba untuk memastikan bahwa kualitas, kinerja, dan keandalan dari barang/aplikasi/sistem telah berfungsi sesuai dengan kriteria yang ditetapkan.",
             abbr: "",
           },
         ],
@@ -836,14 +890,16 @@ export const clustersSeed = [
             name: "distributing",
             description:
               "Deploying something (information, goods, letters, articles, etc.) at about the same time to a particular place or region.",
-            descriptionId: "",
+            descriptionId:
+              "Mendistribusikan barang, dokumen, ataupun informasi secara serentak ke beberapa tempat atau tujuan tertentu.",
             abbr: "",
           },
           {
             name: "delivering",
             description:
               "Sending something like letters, items purchased or ordered to an address or a specific person.",
-            descriptionId: "",
+            descriptionId:
+              "Mengirim sesuatu, seperti surat, barang yang dibeli/dipesan, ke alamat atau orang tertentu.",
             abbr: "",
           },
         ],
@@ -854,13 +910,13 @@ export const clustersSeed = [
           {
             name: "operating",
             description: "Running or operating something (machinery, equipment, processes, or systems).",
-            descriptionId: "",
+            descriptionId: "Menjalankan atau mengoperasikan mesin, peralatan, proses, atau sistem.",
             abbr: "",
           },
           {
             name: "maintaining",
             description: "Taking care of machinery, equipment, systems or structures.",
-            descriptionId: "",
+            descriptionId: "Memelihara fungsi mesin, sistem, peralatan, atau bangunan.",
             abbr: "",
           },
         ],
@@ -872,7 +928,7 @@ export const clustersSeed = [
             name: "manual skill",
             description:
               "Jobs requiring many skills of the hands and other Teaching someone else (usually subordinates) with a teaching method and directing them to achieve success.",
-            descriptionId: "",
+            descriptionId: "Pekerjaan yang banyak membutuhkan keterampilan dari tangan dan anggota tubuh lainnya.",
             abbr: "",
           },
         ],
@@ -884,7 +940,8 @@ export const clustersSeed = [
             name: "physical skill",
             description:
               "Use of physical coordination functions such as climbing, controlling, operating equipment, and others.",
-            descriptionId: "",
+            descriptionId:
+              "Menggunakan fungsi koordinasi fisik, seperti memanjat, mengontrol dan mengoperasikan peralatan, dll.",
             abbr: "",
           },
         ],
@@ -895,7 +952,8 @@ export const clustersSeed = [
           {
             name: "planting",
             description: "Perform activities of preparing, sowing, growing, nurturing, caring for plants.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan kegiatan menyiapkan, menyemai, menumbuhkan, memelihara, merawat tumbuhan atau tanaman.",
             abbr: "",
           },
         ],
@@ -906,7 +964,7 @@ export const clustersSeed = [
           {
             name: "sport",
             description: "Doing certain sport activities with high achievements.",
-            descriptionId: "",
+            descriptionId: "Melakukan kegiatan olahraga tertentu, dan berprestasi.",
             abbr: "",
           },
         ],
@@ -917,7 +975,7 @@ export const clustersSeed = [
           {
             name: "tending animal",
             description: "Feeding, caring for, training, and breeding animals.",
-            descriptionId: "",
+            descriptionId: "Memberi makan, merawat, melatih, dan mengembang biakkan binatang.",
             abbr: "",
           },
         ],
@@ -940,19 +998,22 @@ export const clustersSeed = [
           {
             name: "cooperating",
             description: "Acting or cooperating with others, to achieve common goals agreed upon.",
-            descriptionId: "",
+            descriptionId:
+              "Bertindak atau bekerjasama dengan orang lain untuk mencapai sasaran bersama yang telah ditetapkan.",
             abbr: "",
           },
           {
             name: "coordinating",
             description: "Managing the distribution of tasks to multiple people, so they can complete a given task.",
-            descriptionId: "",
+            descriptionId:
+              "Mengatur pembagian tugas kepada beberapa orang agar dapat menyelesaikan tugas yang diberikan.",
             abbr: "",
           },
           {
             name: "dispatching",
             description: "Assigning someone to go a certain place in accordance to the tasks to be done.",
-            descriptionId: "",
+            descriptionId:
+              "Menugaskan seseorang untuk pergi ke tempat tertentu sesuai dengan tugas yang harus dilakukan.",
             abbr: "",
           },
         ],
@@ -963,19 +1024,20 @@ export const clustersSeed = [
           {
             name: "selling",
             description: "Selling products or services in ways to make other people eager to buy it.",
-            descriptionId: "",
+            descriptionId: "Menjual produk atau jasa dengan dengan cara meyakinkan orang lain untuk membelinya.",
             abbr: "",
           },
           {
             name: "brokering",
             description: "Be a liaison between the two sides to help the business transaction process.",
-            descriptionId: "",
+            descriptionId: "Menjadi penghubung antara kedua belah pihak agar terjadi transaksi bisnis.",
             abbr: "",
           },
           {
             name: "influencing",
             description: "Activities affecting or convincing the mind of others to follow what was said or done.",
-            descriptionId: "",
+            descriptionId:
+              "Kegiatan mempengaruhi pikiran atau meyakinkan orang lain untuk mengikuti apa yang diucapkan atau diperbuat.",
             abbr: "",
           },
         ],
@@ -987,20 +1049,22 @@ export const clustersSeed = [
             name: "collecting",
             description:
               "Performing billing in accordance with the contract or agreement previously agreed upon by both parties.",
-            descriptionId: "",
+            descriptionId:
+              "Melakukan penagihan sesuai dengan kontrak atau perjanjian yang telah disepakati oleh dua belah pihak.",
             abbr: "",
           },
           {
             name: "controlling",
             description: "Using authority to manage and supervise people in performing their tasks.",
-            descriptionId: "",
+            descriptionId: "Menggunakan kekuasaan untuk dapat mengatur dan mengawasi orang dalam melaksanakan tugas.",
             abbr: "",
           },
           {
             name: "interrogating",
             description:
               "Asking questions to other people in an aggressive and thorough way, to reveal the truth of an incident or event.",
-            descriptionId: "",
+            descriptionId:
+              "Mengajukan pertanyaan kepada orang lain secara agresif dan teliti untuk mengungkapkan kebenaran suatu kejadian atau peristiwa.",
             abbr: "",
           },
         ],
@@ -1011,21 +1075,24 @@ export const clustersSeed = [
           {
             name: "mediating",
             description: "",
-            descriptionId: "",
+            descriptionId:
+              "Berusaha mengatasi dan melibatkan diri dalam upaya penyelesaian sebuah konflik atau perseteruan.",
             abbr: "",
           },
           {
             name: "negotiating",
             description:
               "Trying to get an agreement on terms that are still not accepted by the person / party, so that both parties get the benefits, rights, or opportunities.",
-            descriptionId: "",
+            descriptionId:
+              "Berusaha mendapatkan kesepakatan tentang hal yang masih belum dapat diterima oleh pihak lain agar kedua belah pihak mendapatkan keuntungan, hak, atau kesempatan.",
             abbr: "",
           },
           {
             name: "purchasing",
             description:
               "Buying something with cash or its equivalent through efforts and sacrifices to get the best out of these things.",
-            descriptionId: "",
+            descriptionId:
+              "Membeli sesuatu dengan uang atau alat pembayaran lain yang setara dengan upaya keras untuk mendapatkan nilai ekonomis yang terbaik.",
             abbr: "",
           },
         ],
@@ -1036,13 +1103,13 @@ export const clustersSeed = [
           {
             name: "recruiting",
             description: "Selecting and hiring a person as an employee or member.",
-            descriptionId: "",
+            descriptionId: "Aktivitas mencari, memilih, dan mempekerjakan seseorang untuk posisi tertentu.",
             abbr: "",
           },
           {
             name: "interviewing",
             description: "Using questioning techniques to obtain information from someone.",
-            descriptionId: "",
+            descriptionId: "Menggunakan teknik bertanya, untuk mendapatkan informasi dari seseorang.",
             abbr: "",
           },
         ],

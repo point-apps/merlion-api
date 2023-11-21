@@ -15,8 +15,8 @@ export interface QueryInterface {
   fields: string;
   restrictedFields?: string[];
   filter: FilterInterface;
-  page: number;
-  pageSize: number;
+  page?: number;
+  pageSize?: number;
   sort: string;
 }
 
