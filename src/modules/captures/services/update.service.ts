@@ -10,7 +10,7 @@ export class UpdateCaptureService {
   }
   public async handle(id: string, doc: DocumentInterface, session: unknown) {
     const obj: any = {
-      date: new Date(doc.date),
+      date: new Date(new Date(doc.date).getTime() + new Date().getTimezoneOffset()),
       activity: doc.activity,
       description: doc.description,
       observer: doc.observer,

@@ -9,9 +9,8 @@ export class CreateCaptureService {
     this.db = db;
   }
   public async handle(doc: DocumentInterface, options?: CreateOptionsInterface) {
-    console.log("doc", doc);
     const obj: any = {
-      date: new Date(doc.date),
+      date: new Date(new Date(doc.date).getTime() + new Date().getTimezoneOffset()),
       activity: doc.activity,
       description: doc.description,
       observer: doc.observer,
