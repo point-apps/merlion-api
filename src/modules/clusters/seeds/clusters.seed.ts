@@ -476,7 +476,7 @@ export const clustersSeed = [
           },
           {
             name: "mentoring",
-            description: "",
+            description: "Teaching others by providing examples and directions to achieve success.",
             descriptionId:
               "Mengajarkan orang lain dengan cara memberikan contoh dan arahan agar mencapai keberhasilan.",
             abbr: "",
@@ -618,7 +618,7 @@ export const clustersSeed = [
         typologies: [
           {
             name: "marketing",
-            description: "",
+            description: "Activities to develop marketing strategies, including presenting services/products to the public so that they are interested in purchasing the services/products offered.",
             descriptionId:
               "Kegiatan menyusun strategi pemasaran, termasuk cara menyajikan layanan/produk kepada publik agar mereka tertarik untuk membeli layanan/produk yang ditawarkan.",
             abbr: "",
@@ -1074,7 +1074,7 @@ export const clustersSeed = [
         typologies: [
           {
             name: "mediating",
-            description: "",
+            description: "Showing effort to overcome and involving yourself in resolving a conflict or feud.",
             descriptionId:
               "Berusaha mengatasi dan melibatkan diri dalam upaya penyelesaian sebuah konflik atau perseteruan.",
             abbr: "",
