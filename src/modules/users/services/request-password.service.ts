@@ -42,6 +42,7 @@ export class RequestPasswordService {
       subject: "Request Reset Password",
       template: "users/email/request-password",
       context: {
+        domain: appUrl,
         resetPasswordCode: requestPasswordCode,
       },
     };
