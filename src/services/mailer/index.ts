@@ -1,9 +1,9 @@
 import fs from "fs";
 import inlineCss from "@point-hub/nodemailer-inlinecss";
 import { createTransport, createTestAccount, getTestMessageUrl, SendMailOptions } from "nodemailer";
+import { PluginFunction } from "nodemailer/lib/mailer";
 import hbs from "nodemailer-express-handlebars";
 import mg from "nodemailer-mailgun-transport";
-import { PluginFunction } from "nodemailer/lib/mailer";
 import { mailConfig, mailgunConfig } from "@src/config/mail.js";
 import { copyrightYear, appName } from "@src/services/mailer/resources/handlebarsHelpers.js";
 
