@@ -25,7 +25,9 @@ export const create = async (req: Request, res: Response, next: NextFunction) =>
     /**
      * Validate all request data
      */
-    validate(req.body);
+    if (!req.body.isDraft) {
+      validate(req.body);
+    }
 
     const createCaptureService = new CreateCaptureService(db);
     const result = await createCaptureService.handle({ ...req.body, createdBy_id: authUser._id }, { session });
