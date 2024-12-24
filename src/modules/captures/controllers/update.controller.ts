@@ -9,7 +9,9 @@ export const update = async (req: Request, res: Response, next: NextFunction) =>
 
     db.startTransaction();
 
-    validate(req.body);
+    if (!req.body.isDraft) {
+      validate(req.body);
+    }
 
     const updateCaptureService = new UpdateCaptureService(db);
 
