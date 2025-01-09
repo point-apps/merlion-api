@@ -7,7 +7,7 @@ export const validate = (body: any) => {
     activity: "required",
     description: "required",
     observer: "required",
-    clusters: "required",
+    "clusters.*.ikigai": "required",
     isDraft: "required",
     files: "required",
   });
