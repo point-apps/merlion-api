@@ -5,6 +5,7 @@ import { InviteUserService } from "../services/invite.service.js";
 import { apiUrl } from "@src/config/app.js";
 import { db } from "@src/database/database.js";
 import { ReadUserByEmailService } from "@src/modules/auth/services/read-user-by-email.service.js";
+import { ReadUserByUsernameService } from "@src/modules/auth/services/read-user-by-username.service.js";
 import Mailer from "@src/services/mailer/index.js";
 
 export const invite = async (req: Request, res: Response, next: NextFunction) => {
@@ -12,13 +13,18 @@ export const invite = async (req: Request, res: Response, next: NextFunction) =>
     const session = db.startSession();
 
     db.startTransaction();
-
     validate(req.body);
 
     const readUser = new ReadUserByEmailService(db);
     const existingUsers = await readUser.handle(req.body.email);
     if (existingUsers) {
-      throw new ApiError(422);
+      throw new ApiError(422, { email: ["Email already exists"] });
+    }
+
+    const readUsername = new ReadUserByUsernameService(db);
+    const existingUsersByUsername = await readUsername.handle(req.body.username);
+    if (existingUsersByUsername) {
+      throw new ApiError(422, { username: ["Username already exists"] });
     }
 
     const inviteUserService = new InviteUserService(db);

@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import { UserEntity } from "../entities/user.entity.js";
 import { UserRepository } from "../repositories/user.repository.js";
 import DatabaseConnection, { CreateOptionsInterface, DocumentInterface } from "@src/database/connection.js";
@@ -6,6 +5,7 @@ import DatabaseConnection, { CreateOptionsInterface, DocumentInterface } from "@
 interface InviteResponseInterface {
   _id: string;
   email: string;
+  username: string;
   name: string;
   password: string;
   emailVerificationCode: string;
@@ -26,11 +26,12 @@ export class InviteUserService {
   public async handle(doc: DocumentInterface, options?: CreateOptionsInterface) {
     const userEntity = new UserEntity({
       email: doc.email,
+      username: doc.username,
       name: doc.name,
       role: doc.role,
     });
 
-    await userEntity.generateRandomUsername();
+    // await userEntity.generateRandomUsername();
     const pass = pad(
       Number(Math.random() * 100000000)
         .toFixed(0)
@@ -47,6 +48,7 @@ export class InviteUserService {
     return {
       _id: createResponse._id,
       email: readResponse.email,
+      username: readResponse.username,
       name: readResponse.name,
       emailVerificationCode: readResponse.emailVerificationCode,
       password: pass,

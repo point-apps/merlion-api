@@ -16,7 +16,8 @@ export class UpdateUserService {
     validate(doc);
 
     const userEntity = new UserEntity({
-      password: await hash(doc.password),
+      name: doc.name,
+      role: doc.role,
     });
 
     const userRepository = new UserRepository(this.db);
