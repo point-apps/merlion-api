@@ -13,10 +13,13 @@ export const signin = async (req: Request, res: Response, next: NextFunction) =>
     const result = await signinUserService.handle(trim(req.body.username), trim(req.body.password));
 
     res.status(200).json({
+      _id: result._id,
       name: result.name,
       email: result.email,
       username: result.username,
       role: result.role,
+      satus: result.satus,
+      createdAt: result.createdAt,
       accessToken: result.accessToken,
       refreshToken: result.refreshToken,
       googleScopes: result.googleScopes,

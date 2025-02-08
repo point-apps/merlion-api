@@ -46,14 +46,20 @@ export class SigninUserService {
       throw new ApiError(401);
     }
 
+    if (result.data[0].status === "suspend") {
+      throw new ApiError(400);
+    }
+
     const accessToken = signNewToken(issuer, secretKey, result.data[0]._id);
     const refreshToken = generateRefreshToken(issuer, secretKey, result.data[0]._id);
 
     return {
+      _id: result.data[0]._id,
       name: result.data[0].name,
       email: result.data[0].email,
       username: result.data[0].username,
       role: result.data[0].role,
+      createdAt: result.data[0].createdAt,
       accessToken: accessToken,
       refreshToken: refreshToken,
       googleScopes: result.data[0].oauth?.google?.tokens?.scope ?? "",

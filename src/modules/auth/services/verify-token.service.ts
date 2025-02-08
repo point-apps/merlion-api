@@ -32,6 +32,8 @@ export class VerifyTokenUserService {
       username: user.username,
       password: user.password,
       role: user.role,
+      status: user.status,
+      createdAt: user.createdAt,
       oauth: user.oauth,
       googleDriveId: user.googleDriveId,
       googleScopes: user.oauth?.google?.tokens?.scope ?? "",

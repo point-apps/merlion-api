@@ -20,6 +20,8 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
       email: result.email,
       username: result.username,
       role: result.role,
+      status: result.status,
+      createdAt: result.createdAt,
       googleScopes: result.googleScopes,
     });
   } catch (error) {

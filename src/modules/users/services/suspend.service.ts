@@ -1,6 +1,7 @@
 import { UserEntity } from "../entities/user.entity.js";
 import { UserRepository } from "../repositories/user.repository.js";
 import DatabaseConnection, { DocumentInterface } from "@src/database/connection.js";
+import Mailer from "@src/services/mailer/index.js";
 
 export class SuspendUserService {
   private db: DatabaseConnection;
@@ -17,6 +18,22 @@ export class SuspendUserService {
     });
 
     const userRepository = new UserRepository(this.db);
-    return await userRepository.update(id, userEntity.user, { session });
+    const response = await userRepository.update(id, userEntity.user, { session });
+    const user = await userRepository.read(id, { session });
+
+    const message = {
+      to: user.email,
+      subject: "Pemberitahuan Penangguhan Akun Anda",
+      template: "users/email/suspend",
+      context: {
+        name: user.name,
+        email: user.email,
+        date: new Date(),
+      },
+    };
+
+    Mailer.send(message);
+
+    return response;
   }
 }
