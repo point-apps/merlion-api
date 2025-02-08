@@ -22,7 +22,7 @@ export class ActivateUserService {
     const user = await userRepository.read(id, { session });
 
     const message = {
-      to: user.email,
+      to: user.email as string,
       subject: "Pemberitahuan Pengaktifan Akun Anda",
       template: "users/email/activate",
       context: {

@@ -50,6 +50,6 @@ export class UserEntity {
   }
 
   public suspendUser() {
-    this.user.status = "suspended";
+    this.user.status = "suspend";
   }
 }

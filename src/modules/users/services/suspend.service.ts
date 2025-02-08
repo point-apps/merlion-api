@@ -22,7 +22,7 @@ export class SuspendUserService {
     const user = await userRepository.read(id, { session });
 
     const message = {
-      to: user.email,
+      to: user.email as string,
       subject: "Pemberitahuan Penangguhan Akun Anda",
       template: "users/email/suspend",
       context: {

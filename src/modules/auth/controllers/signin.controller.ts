@@ -18,7 +18,7 @@ export const signin = async (req: Request, res: Response, next: NextFunction) =>
       email: result.email,
       username: result.username,
       role: result.role,
-      satus: result.satus,
+      status: result.status,
       createdAt: result.createdAt,
       accessToken: result.accessToken,
       refreshToken: result.refreshToken,

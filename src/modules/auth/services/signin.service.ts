@@ -59,6 +59,7 @@ export class SigninUserService {
       email: result.data[0].email,
       username: result.data[0].username,
       role: result.data[0].role,
+      status: result.data[0].status,
       createdAt: result.data[0].createdAt,
       accessToken: accessToken,
       refreshToken: refreshToken,
