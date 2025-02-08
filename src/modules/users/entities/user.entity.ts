@@ -10,7 +10,7 @@ export interface UserInterface {
   role?: string;
   resetPasswordCode?: string;
   emailVerificationCode?: string;
-  status?: "registered" | "activated" | "suspended";
+  status?: "registered" | "active" | "suspend";
   googleDriveId?: string;
   oauth?: {
     google?: object;

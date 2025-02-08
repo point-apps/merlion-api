@@ -29,6 +29,7 @@ export class InviteUserService {
       username: doc.username,
       name: doc.name,
       role: doc.role,
+      status: "active",
     });
 
     // await userEntity.generateRandomUsername();
