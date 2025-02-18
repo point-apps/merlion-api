@@ -1,6 +1,6 @@
 export const institutionsSeed = [
   {
-    name: "Merlion School",
+    name: "Hyouman",
   },
   {
     name: "Others",

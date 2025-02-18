@@ -1,7 +1,7 @@
 {
-  "name": "merlion-api",
+  "name": "hyouman-api",
   "version": "1.0.0",
-  "description": "Merlion API",
+  "description": "Hyouman API",
   "main": "build/index.js",
   "type": "module",
   "private": true,
@@ -22,7 +22,7 @@
     "css:watch": "css:build --watch"
   },
   "keywords": [
-    "merlion",
+    "hyouman",
     "api"
   ],
   "author": "Martien Dermawan Tanama <martiendt@gmail.com>",
