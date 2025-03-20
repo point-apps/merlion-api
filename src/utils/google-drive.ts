@@ -30,12 +30,15 @@ export class GoogleDrive {
   }
 
   async refreshToken() {
-    const response = await this.authClient.refreshAccessToken();
-    console.log("==========", response);
-    this.drive = google.drive({
-      version: "v3",
-      auth: this.authClient,
-    });
+    try {
+      await this.authClient.refreshAccessToken();
+      this.drive = google.drive({
+        version: "v3",
+        auth: this.authClient,
+      });
+    } catch (error) {
+      console.log("refreshToken Error", error);
+    }
   }
 
   async uploadFile(fileObject: any, folderId: string) {
