@@ -28,15 +28,15 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
      * Validate all request data
      */
     validate(req.body);
-
+    console.log(1);
     const tokens = authUser.oauth?.google?.tokens;
     if (!tokens) {
       throw new ApiError(401);
     }
-
+    console.log(2);
     const googleDrive = new GoogleDrive(tokens);
     await googleDrive.refreshToken();
-
+    console.log(3);
     // If user don't have project folder in their google drive then create a new one
     let googleDriveId = authUser.googleDriveId;
     if (!googleDriveId) {
