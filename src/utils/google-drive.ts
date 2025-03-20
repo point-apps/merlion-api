@@ -31,7 +31,7 @@ export class GoogleDrive {
 
   async refreshToken() {
     const response = await this.authClient.refreshAccessToken();
-    console.log(response);
+    console.log("==========", response);
     this.drive = google.drive({
       version: "v3",
       auth: this.authClient,
