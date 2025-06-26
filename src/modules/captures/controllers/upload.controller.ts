@@ -1,11 +1,11 @@
 import { ApiError } from "@point-hub/express-error-handler";
 import { NextFunction, Request, Response } from "express";
+import { v4 as uuidv4 } from "uuid";
 import { validate } from "../request/upload.request.js";
-import { UpdateGoogleDriveFolderService } from "../services/update-google-drive-folder.service.js";
 import { UploadCaptureService } from "../services/upload.service.js";
 import { db } from "@src/database/database.js";
 import { VerifyTokenUserService } from "@src/modules/auth/services/verify-token.service.js";
-import { GoogleDrive } from "@src/utils/google-drive.js";
+import { uploadFile } from "@src/utils/upload.js";
 
 export const upload = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -29,44 +29,61 @@ export const upload = async (req: Request, res: Response, next: NextFunction) =>
      */
     validate(req.body);
     console.log(1);
-    const tokens = authUser.oauth?.google?.tokens;
-    if (!tokens) {
-      throw new ApiError(401);
-    }
     console.log(2);
-    const googleDrive = new GoogleDrive(tokens);
-    await googleDrive.refreshToken();
     console.log(3);
-    // If user don't have project folder in their google drive then create a new one
-    let googleDriveId = authUser.googleDriveId;
-    if (!googleDriveId) {
-      googleDriveId = await googleDrive.createFolder();
-      const updateService = new UpdateGoogleDriveFolderService(db);
-      await updateService.handle(
-        authUser._id,
-        {
-          googleDriveId: googleDriveId,
-        },
-        session
-      );
-    }
 
     req.body.files = [];
 
+    const mimeTypesMap = {
+      // Images
+      "image/jpeg": "jpg",
+      "image/jpg": "jpg",
+      "image/png": "png",
+      "image/gif": "gif",
+      "image/webp": "webp",
+      "image/svg+xml": "svg",
+      "image/bmp": "bmp",
+      "image/tiff": "tiff",
+      "image/heic": "heic",
+
+      // Documents
+      "application/pdf": "pdf",
+
+      // Videos
+      "video/mp4": "mp4",
+      "video/webm": "webm",
+      "video/quicktime": "mov", // .mov
+      "video/x-msvideo": "avi", // .avi
+      "video/x-matroska": "mkv", // .mkv
+      "video/3gpp": "3gp",
+      "video/3gpp2": "3g2",
+      "video/ogg": "ogv",
+    };
+
     // Upload to drive
     const files = req.files as Express.Multer.File[];
-    console.log(files.length, files);
-    for (let i = 0; i < files.length; i++) {
-      const uploaded = await googleDrive.uploadFile(files[i], googleDriveId as string);
+    console.log("upload to drive ", files.length, files);
+    for (let i = 0; i < files.length; i++) {}
 
-      // Generate public URL
-      const publicUrl = await googleDrive.generatePublicUrl(uploaded?.id as string);
-      req.body.files.push({
-        id: uploaded?.id,
-        name: uploaded?.name,
-        mimeType: uploaded?.mimeType,
-        url: publicUrl?.webContentLink,
-      });
+    if (files && files.length > 0) {
+      console.log("a1");
+      for (const [index, documentFile] of files.entries()) {
+        console.log("a2");
+        const documentMimeType = documentFile.mimetype;
+        const document = `document-${uuidv4()}.${
+          mimeTypesMap[documentFile.mimetype as unknown as keyof typeof mimeTypesMap]
+        }`;
+        console.log("a3");
+        req.body.files.push({
+          id: index,
+          name: document,
+          mimeType: documentMimeType,
+        });
+
+        console.log("a4");
+        await uploadFile(`${document}`, documentFile.buffer);
+        console.log("a5");
+      }
     }
 
     const uploadCaptureService = new UploadCaptureService(db);

@@ -95,6 +95,6 @@ export class ReadManyCaptureService {
 
     const aggregateResult = await captureRepository.aggregate(aggregates, query);
 
-    return aggregateResult;
+    return aggregateResult as any;
   }
 }

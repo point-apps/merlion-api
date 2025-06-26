@@ -8,13 +8,7 @@ export class UpdateUploadCaptureService {
   }
   public async handle(id: string, doc: DocumentInterface, session: unknown) {
     const captureRepository = new CaptureRepository(this.db);
-    console.log({
-      $pull: {
-        files: {
-          id: doc.id,
-        },
-      },
-    });
+    console.log("1--2--", id, doc);
     return await captureRepository.update(
       id,
       {
