@@ -1,8 +1,7 @@
 import { ObjectId } from "mongodb";
-import { CaptureEntity, CaptureInterface } from "../entities/capture.entity.js";
 import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection from "@src/database/connection.js";
-import { fields, limit, page, skip, sort } from "@src/database/mongodb-util.js";
+import { fields } from "@src/database/mongodb-util.js";
 
 export class ReadCaptureService {
   private db: DatabaseConnection;

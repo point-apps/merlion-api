@@ -14,6 +14,8 @@ export class UpdateCaptureService {
       activity: doc.activity,
       description: doc.description,
       observer: doc.observer,
+      teachers: doc.teachers,
+      activity_note: doc.activity_note,
       clusters: doc.clusters,
       isDraft: doc.isDraft,
     };

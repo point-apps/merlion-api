@@ -4,6 +4,8 @@ export interface CaptureInterface {
   activity?: string;
   description?: string;
   observer?: string;
+  teachers?: string;
+  activity_note?: string;
   clusters?: [];
   isDraft?: boolean;
 }
