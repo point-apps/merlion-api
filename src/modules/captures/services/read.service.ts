@@ -32,6 +32,22 @@ export class ReadCaptureService {
           },
         },
       },
+      {
+        $lookup: {
+          from: "users",
+          localField: "createdBy_id",
+          foreignField: "_id",
+          pipeline: [{ $project: { name: 1, email: 1 } }],
+          as: "createdBy",
+        },
+      },
+      {
+        $set: {
+          createdBy: {
+            $arrayElemAt: ["$createdBy", 0],
+          },
+        },
+      },
       { $limit: 1 },
     ];
 

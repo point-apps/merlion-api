@@ -34,7 +34,7 @@ export class ReadManyCaptureService {
           from: "users",
           localField: "createdBy_id",
           foreignField: "_id",
-          pipeline: [{ $project: { name: 1 } }],
+          pipeline: [{ $project: { name: 1, email: 1 } }],
           as: "createdBy",
         },
       },
