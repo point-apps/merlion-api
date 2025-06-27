@@ -93,6 +93,8 @@ export class ReadManyCaptureService {
       aggregates.push({ $match: { ...query.filter } });
     }
 
+    console.log(JSON.stringify(aggregates));
+
     const aggregateResult = await captureRepository.aggregate(aggregates, query);
 
     return aggregateResult as any;
