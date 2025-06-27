@@ -1,7 +1,7 @@
 import { endOfDay, startOfDay } from "date-fns";
 import { CaptureRepository } from "../repositories/capture.repository.js";
 import DatabaseConnection, { QueryInterface } from "@src/database/connection.js";
-import { fields, limit, page, skip, sort } from "@src/database/mongodb-util.js";
+import { fields } from "@src/database/mongodb-util.js";
 
 export class ReadManyCaptureService {
   private db: DatabaseConnection;
@@ -12,12 +12,16 @@ export class ReadManyCaptureService {
     const captureRepository = new CaptureRepository(this.db);
 
     const searchData: any = [];
+    const postLookupSearchData: any = [];
 
     if (search.activity) {
       searchData.push({ activity: { $regex: search.activity, $options: "i" } });
     }
     if (search.cluster) {
       searchData.push({ clusters: { $elemMatch: { name: { $regex: search.cluster, $options: "i" } } } });
+    }
+    if (search.createdBy) {
+      postLookupSearchData.push({ "createdBy.name": { $regex: search.createdBy, $options: "i" } });
     }
 
     if (search.fromDate && search.toDate) {
@@ -73,6 +77,11 @@ export class ReadManyCaptureService {
       aggregates.push({ $match: { $or: searchData } });
     }
 
+    // Apply post-lookup search filters (e.g., createdBy.name)
+    if (postLookupSearchData.length) {
+      aggregates.push({ $match: { $or: postLookupSearchData } });
+    }
+
     if (role !== "admin") {
       aggregates.push({ $match: { createdBy_id: createdBy_id } });
     }
@@ -92,8 +101,6 @@ export class ReadManyCaptureService {
     if (query && query.filter) {
       aggregates.push({ $match: { ...query.filter } });
     }
-
-    console.log(JSON.stringify(aggregates));
 
     const aggregateResult = await captureRepository.aggregate(aggregates, query);
 

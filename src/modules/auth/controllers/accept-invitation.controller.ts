@@ -10,7 +10,6 @@ export const acceptInvitation = async (req: Request, res: Response, next: NextFu
     const session = db.startSession();
 
     db.startTransaction();
-    console.log(req.query.code);
     const query: QueryInterface = {
       fields: "",
       filter: { emailVerificationCode: req.query.code },

@@ -266,7 +266,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
       } else {
         result = await this._collection.updateOne({ _id: new ObjectId(id) }, { $set: document }, updateOptions);
       }
-      console.log(result);
 
       return {
         acknowledged: result.acknowledged,
@@ -276,7 +275,6 @@ export default class MongoDbConnection implements IDatabaseAdapter {
         matchedCount: result.matchedCount,
       };
     } catch (error) {
-      console.log(error);
       if (error instanceof MongoServerError) {
         throw new MongoError(error);
       }

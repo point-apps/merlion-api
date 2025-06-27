@@ -9,11 +9,9 @@ export const googleOauthCallback = async (req: Request, res: Response, next: Nex
   try {
     const session = db.startSession();
     db.startTransaction();
-    console.log(1);
     // Get userinfo from Google Auth
     const googleAuth = new GoogleAuth();
     const token = await googleAuth.getToken(req.query.code as string);
-    console.log("1b", token);
     const oauth2 = googleAuth.getOAuth2(token.tokens);
     const userInfo = await oauth2.userinfo.get();
     // Check if email registered
@@ -40,7 +38,6 @@ export const googleOauthCallback = async (req: Request, res: Response, next: Nex
       },
       session
     );
-    console.log(6);
     await db.commitTransaction();
 
     return res.redirect(redirectUri);

@@ -12,7 +12,6 @@ export const read = async (req: Request, res: Response, next: NextFunction) => {
     const documentFiles = [];
     if (result.files) {
       for (const documentFile of result.files) {
-        console.log(documentFile);
         documentFiles.push({
           id: documentFile.id,
           name: documentFile.name,
@@ -21,7 +20,6 @@ export const read = async (req: Request, res: Response, next: NextFunction) => {
         });
       }
     }
-    console.log(documentFiles);
     result.files = documentFiles;
 
     res.status(200).json(result);

@@ -42,14 +42,11 @@ export const readMany = async (req: Request, res: Response, next: NextFunction) 
     const result = await readManyCaptureService.handle(query, req.query.search, authUser._id, authUser.role);
 
     let documentFiles = [];
-    console.log(result.data);
     if (result.data) {
       for (const data of result.data) {
         documentFiles = [];
-        console.log(data);
         if (data.files) {
           for (const documentFile of data.files) {
-            console.log(data);
             documentFiles.push({
               name: documentFile.name,
               mimeType: documentFile.mimeType,
@@ -60,7 +57,6 @@ export const readMany = async (req: Request, res: Response, next: NextFunction) 
         }
       }
     }
-    console.log(documentFiles);
 
     res.status(200).json(result);
   } catch (error) {

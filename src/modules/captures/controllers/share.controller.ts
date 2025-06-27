@@ -21,9 +21,7 @@ export const share = async (req: Request, res: Response, next: NextFunction) => 
       },
     };
 
-    console.log(message);
-    const status = await Mailer.send(message);
-    console.log(status);
+    await Mailer.send(message);
 
     res.status(200).json(result);
   } catch (error) {
