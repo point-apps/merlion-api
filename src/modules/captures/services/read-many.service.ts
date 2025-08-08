@@ -14,6 +14,8 @@ export class ReadManyCaptureService {
     const searchData: any = [];
     const postLookupSearchData: any = [];
 
+    console.log(search);
+
     if (search.activity) {
       searchData.push({ activity: { $regex: search.activity, $options: "i" } });
     }
@@ -21,7 +23,7 @@ export class ReadManyCaptureService {
       searchData.push({ clusters: { $elemMatch: { name: { $regex: search.cluster, $options: "i" } } } });
     }
     if (search.createdBy) {
-      postLookupSearchData.push({ "createdBy.name": { $regex: search.createdBy, $options: "i" } });
+      postLookupSearchData.push({ "createdBy.username": { $regex: search.createdBy, $options: "i" } });
     }
 
     if (search.fromDate && search.toDate) {
@@ -38,7 +40,7 @@ export class ReadManyCaptureService {
           from: "users",
           localField: "createdBy_id",
           foreignField: "_id",
-          pipeline: [{ $project: { name: 1, email: 1 } }],
+          pipeline: [{ $project: { name: 1, username: 1, email: 1 } }],
           as: "createdBy",
         },
       },
